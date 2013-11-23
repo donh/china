@@ -1,8 +1,8 @@
 {
   "name": "ChinaUrbanization",
-  "version": "0.1.2",
-  "description": "China Urbanization Slides",
-  "homepage": "https://github.com/donh/china",
+  "version": "2.6.0-dev",
+  "description": "The HTML Presentation Framework",
+  "homepage": "http://lab.hakim.se/reveal-js",
   "subdomain": "revealjs",
   "scripts": {
     "test": "grunt test",
@@ -11,11 +11,11 @@
   "author": {
     "name": "Don Hsieh",
     "email": "don@workspace.tw",
-    "web": "https://github.com/donh"
+    "web": "http://hakim.se"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:donh/china.git"
+    "url": "git://github.com/hakimel/reveal.js.git"
   },
   "engines": {
     "node": "~0.8.0"
@@ -40,7 +40,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/donh/china/blob/master/LICENSE"
+      "url": "https://github.com/hakimel/reveal.js/blob/master/LICENSE"
     }
   ]
 }

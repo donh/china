@@ -1,21 +1,21 @@
 {
-  "name": "reveal.js",
-  "version": "2.6.0-dev",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
+  "name": "China Urbanization",
+  "version": "0.1",
+  "description": "China Urbanization Slides",
+  "homepage": "https://github.com/donh/china",
   "subdomain": "revealjs",
   "scripts": {
     "test": "grunt test",
     "start": ""
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Don Hsieh",
+    "email": "don@workspace.tw",
+    "web": "https://github.com/donh"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git@github.com:donh/china.git"
   },
   "engines": {
     "node": "~0.8.0"
@@ -40,7 +40,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/hakimel/reveal.js/blob/master/LICENSE"
+      "url": "https://github.com/donh/china/blob/master/LICENSE"
     }
   ]
 }

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>China 5-years-plans</title>
+
+		<meta name="description" content="China 5-years-plans">
+		<meta name="author" content="Don Hsieh">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<!--
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		-->
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="cover"></section>
+				<section id="plan_06_5"></section>
+				<section id="plan_07_5"></section>
+				<section id="plan_08_5"></section>
+				<section id="plan_09_5"></section>
+				<section id="plan_10_5"></section>
+				<section id="plan_11_5"></section>
+				<section id="plan_12_5"></section>
+				<section id="plan_13_5"></section>
+				<section>
+					<h2>習、李面對的困局與對策</h2>
+				</section>
+
+				<section id="note"></section>
+				<section id="urbanization"></section>
+				<section id="financial_market"></section>
+
+				<section>
+					<h2>結論</h2>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/jquery-2.0.3.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+// may delete start
+/*
+			function slidenumber(event) {
+				var totalslides = document.querySelectorAll( '.reveal .slides section:not(.stack)' ).length;
+				var current_slide = 0;
+
+				var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+				for (var i = 0; i < event.indexh; i++) {
+					// get subslides
+					var subslides = horizontal_slides[i].querySelectorAll('section');
+
+					// if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+					current_slide += (subslides.length === 0) ? 1 : subslides.length;
+				}
+
+				current_slide += event.indexv+1;
+				return current_slide.toString()+"/"+totalslides.toString();
+			}
+*/
+			Reveal.addEventListener('slidechanged', function(event) {
+				document.querySelector(".slidenumber").innerText=slidenumber(event);
+			});
+			Reveal.addEventListener('ready', function(event) {
+				document.querySelector(".slidenumber").innerText=slidenumber(event);
+			});
+// may delete end
+			jQuery(function(){
+				jQuery("#cover").load("htm/cover.html");
+				jQuery("#plan_06_5").load("htm/plan_06_5.html");
+				jQuery("#plan_07_5").load("htm/plan_07_5.html");
+				jQuery("#plan_08_5").load("htm/plan_08_5.html");
+				jQuery("#plan_09_5").load("htm/plan_09_5.html");
+				jQuery("#plan_10_5").load("htm/plan_10_5.html");
+				jQuery("#plan_11_5").load("htm/plan_11_5.html");
+				jQuery("#plan_12_5").load("htm/plan_12_5.html");
+				jQuery("#plan_13_5").load("htm/plan_13_5.html");
+				jQuery("#note").load("htm/note.html");
+				jQuery("#urbanization").load("htm/urbanization.html");
+				jQuery("#financial_market").load("htm/financial_market.html");
+			});
+		</script>
+
+	</body>
+</html>

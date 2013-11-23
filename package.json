@@ -1,6 +1,6 @@
 {
-  "name": "China Urbanization",
-  "version": "0.1",
+  "name": "ChinaUrbanization",
+  "version": "0.1.2",
   "description": "China Urbanization Slides",
   "homepage": "https://github.com/donh/china",
   "subdomain": "revealjs",

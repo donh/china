@@ -4,9 +4,6 @@
   "description": "The HTML Presentation Framework",
   "homepage": "http://lab.hakim.se/reveal-js",
   "subdomain": "revealjs",
-  "scripts": {
-    "postinstall": "./node_modules/.bin/grunt"
-  },
   "author": {
     "name": "Don Hsieh",
     "email": "don@workspace.tw",

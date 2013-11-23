@@ -584,49 +584,6 @@
 					</section>
 				</section>
 				<section id="financial_market">
-					<section>
-						<h2>金融市場</h2>
-						<br>
-						<div>第十八屆三中全會：2013年11月9日 - 12日</div>
-						<br>
-						<div>第十八屆中央委員會第三次全體會議</div>
-						<div>經濟/金融改革部分：</div>
-						<ol>
-							<li>完善金融市場體系</li>
-							<li>完善人民幣匯率形成機制</li>
-							<li>落實金融監管改革措施</li>
-						</ol>
-					</section>
-					<section>
-						<h2>完善金融市場體系</h2>
-						<br>
-						<ul>
-							<li>擴大金融業對內對外開放，在加強監管前提下，允許具備條件的民間資本依法發起設立中小型銀行等金融機構。
-							</li>
-							<li>推進政策性金融機構改革。健全多層次資本市場體系，推進股票發行註冊制改革，多渠道推動股權融資，發展並規範債券市場，提高直接融資比重。
-							</li>
-							<li>完善保險經濟補償機制，建立巨災保險制度。發展普惠金融。鼓勵金融創新，豐富金融市場層次和產品。
-							</li>
-						</ul>
-					</section>
-					<section>
-						<h2>完善人民幣匯率形成機制</h2>
-						<br>
-						<ul>
-							<li>加快推進利率市場化，健全反映市場供求關係的國債收益率曲線。</li>
-							<li>推動資本市場雙向開放，有序提高跨境資本和金融交易可兌換程度，建立健全宏觀審慎管理框架下的外債和資本流動管理體系，加快實現人民幣資本項目可兌換。
-							</li>
-						</ul>
-					</section>
-					<section>
-						<h2>落實金融監管改革措施</h2>
-						<br>
-						<ul>
-							<li>完善監管協調機制，界定中央和地方金融監管職責和風險處置責任。</li>
-							<li>建立存款保險制度，完善金融機構市場化退出機制。</li>
-							<li>加強金融基礎設施建設，保障金融市場安全高效運行和整體穩定。</li>
-						</ul>
-					</section>
 				</section>
 
 
@@ -691,6 +648,9 @@
 				document.querySelector(".slidenumber").innerText=slidenumber(event);
 			});
 // may delete end
+			jQuery(function(){
+				jQuery("#financial_market").load("htm/financial_market.html"); 
+			});
 		</script>
 
 	</body>

@@ -1,5 +1,5 @@
 {
-  "name": "reveal.js",
+  "name": "ChinaUrbanization",
   "version": "2.6.0-dev",
   "description": "The HTML Presentation Framework",
   "homepage": "http://lab.hakim.se/reveal-js",
@@ -9,8 +9,8 @@
     "start": ""
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
+    "name": "Don Hsieh",
+    "email": "don@workspace.tw",
     "web": "http://hakim.se"
   },
   "repository": {

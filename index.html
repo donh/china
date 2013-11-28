@@ -90,8 +90,6 @@
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
-// may delete start
-///*
 			function slidenumber(event) {
 				var totalslides = document.querySelectorAll( '.reveal .slides section:not(.stack)' ).length;
 				console.log(totalslides);
@@ -113,7 +111,6 @@
 				console.log(current_slide.toString()+"/"+totalslides.toString());
 				return current_slide.toString()+"/"+totalslides.toString();
 			}
-//*/
 			Reveal.addEventListener('slidechanged', function(event) {
 				//document.querySelector(".slidenumber").innerText=slidenumber(event);
 				var number = slidenumber(event);
@@ -127,7 +124,6 @@
 				jQuery(".slidenumber").text(number);
 			});
 */
-// may delete end
 			jQuery(function(){
 				jQuery("#cover").load("htm/cover.html");
 				jQuery("#plan_06_5").load("htm/plan_06_5.html");

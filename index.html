@@ -87,12 +87,14 @@
 				]
 			});
 // may delete start
-/*
+///*
 			function slidenumber(event) {
 				var totalslides = document.querySelectorAll( '.reveal .slides section:not(.stack)' ).length;
+				console.log(totalslides);
 				var current_slide = 0;
 
 				var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+				console.log(horizontal_slides);
 				for (var i = 0; i < event.indexh; i++) {
 					// get subslides
 					var subslides = horizontal_slides[i].querySelectorAll('section');
@@ -100,11 +102,14 @@
 					// if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
 					current_slide += (subslides.length === 0) ? 1 : subslides.length;
 				}
+				console.log(current_slide);
 
 				current_slide += event.indexv+1;
+				console.log(current_slide);
+				console.log(current_slide.toString()+"/"+totalslides.toString());
 				return current_slide.toString()+"/"+totalslides.toString();
 			}
-*/
+//*/
 			Reveal.addEventListener('slidechanged', function(event) {
 				document.querySelector(".slidenumber").innerText=slidenumber(event);
 			});

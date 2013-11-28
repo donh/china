@@ -45,6 +45,7 @@
 				<section id="plan_13_5"></section>
 				<section>
 					<h2>習、李面對的困局與對策</h2>
+					<div class="slidenumber"></div>
 				</section>
 
 				<section id="note"></section>
@@ -53,6 +54,7 @@
 
 				<section>
 					<h2>結論</h2>
+					<div class="slidenumber"></div>
 				</section>
 			</div>
 
@@ -111,11 +113,18 @@
 			}
 //*/
 			Reveal.addEventListener('slidechanged', function(event) {
-				document.querySelector(".slidenumber").innerText=slidenumber(event);
+				//document.querySelector(".slidenumber").innerText=slidenumber(event);
+				var number = slidenumber(event);
+				jQuery(".slidenumber").text(number);
+
 			});
+			/*
 			Reveal.addEventListener('ready', function(event) {
-				document.querySelector(".slidenumber").innerText=slidenumber(event);
+				//document.querySelector(".slidenumber").innerText=slidenumber(event);
+				var number = slidenumber(event);
+				jQuery(".slidenumber").text(number);
 			});
+*/
 // may delete end
 			jQuery(function(){
 				jQuery("#cover").load("htm/cover.html");

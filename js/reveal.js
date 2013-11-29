@@ -360,6 +360,10 @@ var Reveal = (function(){
 		dom.progress = createSingletonNode( dom.wrapper, 'div', 'progress', '<span></span>' );
 		dom.progressbar = dom.progress.querySelector( 'span' );
 
+		// Slide number
+		createSingletonNode( dom.wrapper, 'div', 'slide-number', '<div class="slidenumber"></div>' );
+		//dom.slidenumber = document.querySelector( '.reveal .slide-number' );
+
 		// Arrow controls
 		createSingletonNode( dom.wrapper, 'aside', 'controls',
 			'<div class="navigate-left"></div>' +

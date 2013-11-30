@@ -24,6 +24,10 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<link type="text/css" href="css/d3-style.css" rel="stylesheet" />
+		<link type="text/css" href="css/gantt-chart.css" rel="stylesheet" />
+
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -38,6 +42,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section id="cover"></section>
+				<section id="gantt-chart"></section>
 				<section id="plan_01_5"></section>
 				<section id="plan_06_5"></section>
 				<section id="plan_07_5"></section>
@@ -77,9 +82,12 @@
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 		<script src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/d3.v3.js"></script>
+		<script type="text/javascript" src="js/gantt-chart-d3v2.js"></script>
+		<script type="text/javascript" src="js/gantt-chart.js"></script>
 		<!--
 		<script src="js/bootstrap.js"></script>
-	-->
+		-->
 
 		<script>
 
@@ -141,6 +149,7 @@
 			//*/
 			jQuery(function(){
 				jQuery("#cover").load("htm/cover.html");
+				//jQuery("#gantt-chart").load("htm/gantt-chart.html");
 				jQuery("#plan_01_5").load("htm/plan_01_5.html");
 				jQuery("#plan_06_5").load("htm/plan_06_5.html");
 				jQuery("#plan_07_5").load("htm/plan_07_5.html");

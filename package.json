@@ -25,7 +25,7 @@
     "express": "~2.5.9",
     "mustache": "~0.7.2",
     "socket.io": "~0.9.13",
-    "grunt": "~0.4.1"
+    "grunt": "*"
   },
   "devDependencies": {
     "grunt-contrib-qunit": "~0.2.2",
@@ -36,6 +36,10 @@
     "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-connect": "~0.4.1",
     "grunt-zip": "~0.7.0"
+  },
+  "scripts": {
+    "preinstall": "echo postinstall time; npm install; npm i -S grunt grunt-cli;",
+    "postinstall": "./node_modules/.bin/grunt"
   },
   "licenses": [
     {

@@ -1,11 +1,34 @@
+'use strict';
+
 /* global module:false */
 module.exports = function(grunt) {
 	//var port = grunt.option('port') || 8000;
 	var port = grunt.option('port') || 3000;
 	//var port = grunt.option('port') || 80;
+
+	var reloadPort = 35729, files;
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		watch: {
+			options: {
+				nospawn: true,
+				livereload: reloadPort
+			},
+			main: {
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				tasks: 'default'
+			},
+			theme: {
+				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
+				tasks: 'themes'
+			}
+		}
+		develop: {
+			server: {
+				file: 'server.js'
+			}
+		},
 		meta: {
 			banner:
 				'/*!\n' +
@@ -31,7 +54,6 @@ module.exports = function(grunt) {
 				dest: 'js/reveal.min.js'
 			}
 		},
-
 		cssmin: {
 			compress: {
 				files: {
@@ -39,7 +61,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
 		sass: {
 			main: {
 				files: {
@@ -76,7 +97,7 @@ module.exports = function(grunt) {
 			},
 			files: [ 'Gruntfile.js', 'js/reveal.js' ]
 		},
-
+/*
 		connect: {
 			server: {
 				options: {
@@ -86,7 +107,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
+*/
 		zip: {
 			'reveal-js-presentation.zip': [
 				'index.html',
@@ -98,16 +119,6 @@ module.exports = function(grunt) {
 			]
 		},
 
-		watch: {
-			main: {
-				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
-				tasks: 'default'
-			},
-			theme: {
-				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
-				tasks: 'themes'
-			}
-		}
 
 	});
 

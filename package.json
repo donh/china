@@ -38,8 +38,7 @@
     "grunt-zip": "~0.7.0"
   },
   "scripts": {
-    "preinstall": "echo postinstall time; npm install; npm i -S grunt grunt-cli;",
-    "postinstall": "./node_modules/.bin/grunt"
+    "postinstall": "npm i -S grunt grunt-cli"
   },
   "licenses": [
     {

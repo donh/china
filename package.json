@@ -7,7 +7,7 @@
   "author": {
     "name": "Don Hsieh",
     "email": "don@workspace.tw",
-    "web": "http://hakim.se"
+    "web": "https://github.com/donh"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/hakimel/reveal.js/blob/master/LICENSE"
+      "url": "https://github.com/donh/china/blob/master/LICENSE"
     }
   ]
 }

@@ -18,9 +18,7 @@
   },
   "dependencies": {
     "underscore": "~1.5.1",
-    "express": "~3.0.0",
-    "mustache": "~0.7.2",
-    "socket.io": "~0.9.13",
+    "express": "3.x",
     "grunt-contrib-qunit": "~0.2.2",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-cssmin": "~0.4.1",
@@ -31,7 +29,7 @@
     "grunt-zip": "~0.7.0",
     "grunt-cli": "~0.1.11",
     "grunt": "~0.4.2",
-    "gzippo": "~0.2.0"
+    "jade": "*"
   },
   "devDependencies": {},
   "licenses": [

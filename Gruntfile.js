@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
 			}
-		}
+		},
 		develop: {
 			server: {
 				file: 'server.js'

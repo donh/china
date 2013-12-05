@@ -7,5 +7,9 @@ exports.index = function(req, res) {
 };
 
 exports.read = function(req, res) {
+	res.render('home', { title: 'Hello, Home!' });
+};
+
+exports.read = function(req, res) {
 	res.render('read', { title: 'Hello, World!' });
 };

@@ -1,5 +1,127 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
+	h1= title
+	p Welcome to #{title}
+	div.reveal
+		//- Any section element inside of this container is displayed as a slide
+		div.slides
+
+			section#cover
+
+			section
+			section#gantt-chart
+			section
+
+			section#plan_01_5
+			section#plan_06_5
+			section#plan_07_5
+			section#plan_08_5
+			section#plan_09_5
+			section#plan_10_5
+			section#plan_11_5
+			section#plan_12_5
+
+			//-section#plan_13_5
+			//-section
+			//-	h2 習、李面對的困局與對策
+			//-	div.slidenumber
+			//-section#note
+
+			section#urbanization
+			section#tax
+
+			//-section#financial_market
+
+			//-section
+			//-	h2 結論
+			//-	div.slidenumber
+
+			//-span.slidenumber
+			//div.slidenumber
+			//footer.slidenumber
+
+
+	script(src='lib/js/head.min.js')
+	script(src='js/reveal.min.js')
+	script(src='js/jquery-2.0.3.min.js')
+	//-script(src='js/d3.v3.js')
+	//-script(src='js/gantt-chart-d3v2.js')
+	//-script(src='js/gantt-chart.js')
+
+	//-script(src='js/bootstrap.js')
+
+	script(type='text/javascript').
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			//slidenumber: true,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+		});
+		function slidenumber(event) {
+			var totalslides = document.querySelectorAll( '.reveal .slides section:not(.stack)' ).length;
+			//console.log(totalslides);
+			var current_slide = 0;
+
+			var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+			//console.log(horizontal_slides);
+			for (var i = 0; i < event.indexh; i++) {
+				// get subslides
+				var subslides = horizontal_slides[i].querySelectorAll('section');
+
+				// if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+				current_slide += (subslides.length === 0) ? 1 : subslides.length;
+			}
+			//console.log(current_slide);
+
+			current_slide += event.indexv+1;
+			//console.log(current_slide.toString()+"/"+totalslides.toString());
+			return current_slide.toString()+"/"+totalslides.toString();
+		}
+		Reveal.addEventListener('slidechanged', function(event) {
+			//document.querySelector(".slidenumber").innerText=slidenumber(event);
+			var number = slidenumber(event);
+			jQuery(".slidenumber").text(number);
+
+		});
+		///*
+		Reveal.addEventListener('ready', function(event) {
+			//document.querySelector(".slidenumber").innerText=slidenumber(event);
+			var number = slidenumber(event);
+			jQuery(".slidenumber").text(number);
+		});
+		//*/
+		jQuery(function(){
+			jQuery("#cover").load("htm/cover.html");
+			jQuery("#gantt-chart").load("htm/gantt-chart.html");
+			jQuery("#plan_01_5").load("htm/plan_01_5.html");
+			jQuery("#plan_06_5").load("htm/plan_06_5.html");
+			jQuery("#plan_07_5").load("htm/plan_07_5.html");
+			jQuery("#plan_08_5").load("htm/plan_08_5.html");
+			jQuery("#plan_09_5").load("htm/plan_09_5.html");
+			jQuery("#plan_10_5").load("htm/plan_10_5.html");
+			jQuery("#plan_11_5").load("htm/plan_11_5.html");
+			jQuery("#plan_12_5").load("htm/plan_12_5.html");
+			//jQuery("#plan_13_5").load("htm/plan_13_5.html");
+			//jQuery("#note").load("htm/note.html");
+			jQuery("#urbanization").load("htm/urbanization.html");
+			jQuery("#tax").load("htm/tax.html");
+			//jQuery("#financial_market").load("htm/financial_market.html");
+		});

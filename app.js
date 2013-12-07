@@ -32,8 +32,10 @@ if ('development' == app.get('env')) {
 //app.use(express.static(__dirname));
 //app.use("/", express.static(__dirname));
 //app.use("/", express.static(__dirname + '/'));
-app.use("/", express.static(__dirname + "/dist"));
-app.get('/home', routes.home);
+
+//app.use("/", express.static(__dirname + "/dist"));
+app.use('/', routes.home);
+//app.get('/home', routes.home);
 app.get('/read', routes.read);
 //app.get('/read', read.plan);
 

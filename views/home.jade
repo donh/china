@@ -5,10 +5,12 @@ block content
 		//- Any section element inside of this container is displayed as a slide
 		div.slides
 
-			section#cover
-			section#QA131207
-			//section
-			section#gantt-chart
+			section
+				include cover
+			section
+				include QA131207
+			section
+				include gantt-chart
 			//section
 			//section#plan_01_5
 			//section#plan_06_5
@@ -105,10 +107,12 @@ block content
 			jQuery(".slidenumber").text(number);
 		});
 		//*/
-		jQuery(function(){
-			jQuery("#cover").load("htm/cover.html");
-			jQuery("#QA131207").load("htm/QA131207.html");
-			jQuery("#gantt-chart").load("htm/gantt-chart.html");
+		
+		//jQuery(function(){
+			//jQuery("#cover").load("htm/cover.html");
+			//jQuery("#QA131207").load("htm/QA131207.html");
+			//jQuery("#QA131207").load("../views/QA131207.jade");
+			//jQuery("#gantt-chart").load("htm/gantt-chart.html");
 			//jQuery("#plan_01_5").load("htm/plan_01_5.html");
 			//jQuery("#plan_06_5").load("htm/plan_06_5.html");
 			//jQuery("#plan_07_5").load("htm/plan_07_5.html");
@@ -123,4 +127,4 @@ block content
 			//jQuery("#urbanization").load("htm/urbanization.html");
 			//jQuery("#tax").load("htm/tax.html");
 			//jQuery("#financial_market").load("htm/financial_market.html");
-		});
+		//});

@@ -5,7 +5,6 @@ module.exports = function(grunt) {
 	//var port = grunt.option('port') || 8000;
 	var port = grunt.option('port') || 3000;
 	//var port = grunt.option('port') || 80;
-
 	var reloadPort = 35729, files;
 	// Project configuration
 	grunt.initConfig({

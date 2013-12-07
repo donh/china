@@ -9,6 +9,11 @@ module.exports = function(grunt) {
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		develop: {
+			server: {
+				file: 'app.js'
+			}
+		},
 		watch: {
 			options: {
 				nospawn: true,
@@ -21,11 +26,6 @@ module.exports = function(grunt) {
 			theme: {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
-			}
-		},
-		develop: {
-			server: {
-				file: 'server.js'
 			}
 		},
 		meta: {
@@ -122,6 +122,7 @@ module.exports = function(grunt) {
 	});
 
 	// Dependencies
+	grunt.loadNpmTasks( 'grunt-develop' );
 	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
@@ -133,7 +134,8 @@ module.exports = function(grunt) {
 
 	// Default task
 	//grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit' ] );
-	grunt.registerTask( 'default', [ 'connect', 'watch' ] );
+	//grunt.registerTask( 'default', [ 'connect', 'watch' ] );
+	grunt.registerTask( 'default', [ 'develop', 'watch' ] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );

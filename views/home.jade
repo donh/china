@@ -103,3 +103,11 @@ block content
 			//console.log(current_slide.toString()+"/"+totalslides.toString());
 			return current_slide.toString()+"/"+totalslides.toString();
 		}
+		Reveal.addEventListener('slidechanged', function(event) {
+			var number = slidenumber(event);
+			jQuery(".slidenumber").text(number);
+		});
+		Reveal.addEventListener('ready', function(event) {
+			var number = slidenumber(event);
+			jQuery(".slidenumber").text(number);
+		});

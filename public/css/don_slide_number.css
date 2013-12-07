@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/*!
+ * don.js
+ * http://githbub.com/donh
+ * MIT licensed
+ *
+ * Copyright (C) 2013
+ */
+
+/*********************************************
+ * VIEW FRAGMENTS
+ *********************************************/
+
+/*********************************************
+ * DEFAULT ELEMENT STYLES
+ *********************************************/
+
+/* Fixes issue in Chrome where italic fonts did not appear when printing to PDF */
+
+.slidenumber {
+	/*
+	width:100%;
+	height:20px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	*/
+	
+	width: 100%;
+	position: relative;
+	height: 20px;
+	margin-top: -20px;
+	clear:both;
+	/*
+	text-align:left;
+	top: -20px;
+	text-align:right;
+	text-align:center;
+	background: #ee5;*/
+}
+
+
+
+/* Ensure certain elements are never larger than the slide itself */
+/*
+#footer {
+	width: 100%;
+	height: 100px;
+	position: relative;
+	margin-top: -100px;
+	background: #ee5;
+	clear:both;
+	background: #000;
+	text-align:center;
+}
+*/

@@ -1,8 +1,6 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}
 	div.reveal
 		//- Any section element inside of this container is displayed as a slide
 		div.slides
@@ -12,7 +10,7 @@ block content
 			section
 			section#gantt-chart
 			section
-
+			section#QA131207
 			section#plan_01_5
 			section#plan_06_5
 			section#plan_07_5
@@ -111,6 +109,7 @@ block content
 		jQuery(function(){
 			jQuery("#cover").load("htm/cover.html");
 			jQuery("#gantt-chart").load("htm/gantt-chart.html");
+			jQuery("#QA131207").load("htm/QA131207.html");
 			jQuery("#plan_01_5").load("htm/plan_01_5.html");
 			jQuery("#plan_06_5").load("htm/plan_06_5.html");
 			jQuery("#plan_07_5").load("htm/plan_07_5.html");

@@ -5,8 +5,11 @@ module.exports = function(grunt) {
 	//var port = grunt.option('port') || 8000;
 	var port = grunt.option('port') || 3000;
 	//var port = grunt.option('port') || 80;
+<<<<<<< HEAD
 
 	var reloadPort = 35729, files;
+=======
+>>>>>>> e9b660f0d0637fe124ef13bb9419f778fa3123bb
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),

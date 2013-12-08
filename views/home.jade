@@ -9,8 +9,10 @@ block content
 				include cover
 			section
 				include QA131207
+			//-section
+			//-	include gantt-chart
 			section
-				include gantt-chart
+				include gantt-d3
 			section
 				include plan_01_5
 			section
@@ -53,7 +55,7 @@ block content
 	script(src='lib/js/head.min.js')
 	//-script(src='js/reveal.min.js')
 	script(src='js/don.js')
-	script(src='js/jquery-2.0.3.min.js')
+	//-script(src='js/jquery-2.0.3.min.js')
 	//-script(src='js/d3.v3.js')
 	//-script(src='js/gantt-chart-d3v2.js')
 	//-script(src='js/gantt-chart.js')
@@ -61,8 +63,8 @@ block content
 	//-script(src='js/bootstrap.js')
 
 	script(type='text/javascript').
-		// Full list of configuration options available here:
-		// https://github.com/hakimel/reveal.js#configuration
+		//- Full list of configuration options available here:
+		//- https://github.com/hakimel/reveal.js#configuration
 		Reveal.initialize({
 			controls: true,
 			progress: true,

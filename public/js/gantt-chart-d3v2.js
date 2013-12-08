@@ -123,9 +123,14 @@ d3.gantt = function() {
 			.attr("class", "x axis")
 			.attr("transform", "translate(0, " + (height - margin.top - margin.bottom) + ")")
 			.transition()
-			.call(xAxis);
+			.call(xAxis)
+			.attr("font-family", "Arial")
+			.attr("font-size", "18");
 
-		svg.append("g").attr("class", "y axis").transition().call(yAxis).attr("fill", "white");;
+		svg.append("g").attr("class", "y axis").transition().call(yAxis)
+			.attr("fill", "white")
+			.attr("font-family", "Arial")
+			.attr("font-size", "20");
 		return gantt;
 	};
 	

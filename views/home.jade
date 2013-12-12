@@ -8,6 +8,8 @@ block content
 			section
 				include cover
 			section
+				include agriculture
+			section
 				include QA131207
 			//-section
 			//-	include gantt-chart
@@ -55,7 +57,7 @@ block content
 	script(src='lib/js/head.min.js')
 	//-script(src='js/reveal.min.js')
 	script(src='js/don.js')
-	//-script(src='js/jquery-2.0.3.min.js')
+	script(src='js/jquery-2.0.3.min.js')
 	//-script(src='js/d3.v3.js')
 	//-script(src='js/gantt-chart-d3v2.js')
 	//-script(src='js/gantt-chart.js')
@@ -101,7 +103,6 @@ block content
 				current_slide += (subslides.length === 0) ? 1 : subslides.length;
 			}
 			//console.log(current_slide);
-
 			current_slide += event.indexv+1;
 			//console.log(current_slide.toString()+"/"+totalslides.toString());
 			return current_slide.toString()+"/"+totalslides.toString();

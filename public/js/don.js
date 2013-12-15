@@ -42,6 +42,49 @@ function agriculcutureDoughnut() {
 	var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(LaborForceData);
 }
 
+/**
+* @function name:	function agriculcutureDoughnut()
+* @description:		This function draws two doughnut charts
+*					 on "Agriculture Shares" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/15/2013
+* @last modified:	12/15/2013
+* @called by:		Reveal.addEventListener('slidechanged')
+*					 in views/home.jade
+*/
+function agriculcutureDoughnut2() {
+	var doughnutData = [
+		{
+			value: 30,
+			label: 'HELLO',
+			color:"#F7464A",
+			labelColor: 'black',
+			labelFontSize: '16'
+		},
+		{
+			value : 50,
+			color : "#46BFBD"
+		},
+		{
+			value : 100,
+			color : "#FDB45C"
+		},
+		{
+			value : 40,
+			color : "#949FB1"
+		},
+		{
+			value : 120,
+			color : "#4D5360"
+		}
+	];
+	var myDoughnut3 = new Chart(document.getElementById("canvas3")
+		.getContext("2d")).Doughnut(doughnutData, {labelAlign: 'center'});
+	var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
+}
 
 /**
 * @function name:	function cargo()
@@ -170,4 +213,49 @@ function cargo2() {
 		}
 	]}
 	var myLine = new Chart(document.getElementById("chart_cargo2").getContext("2d")).Line(data);
+}
+
+
+
+/**
+* @function name:	function doughnutD3()
+* @description:		This function draws a line charts
+*					 on "Agriculture Shares" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/15/2013
+* @last modified:	12/15/2013
+* @called by:		Reveal.addEventListener('slidechanged')
+*					 in views/home.jade
+*/
+function doughnutD3() {
+	var dataset = {
+		apples: [53245, 28479, 19697, 24037, 40245],
+		//apples: [35, 65],
+	};
+	//var width = 460,
+	//	height = 300,
+	var width = 800,
+		height = 600,
+		radius = Math.min(width, height) / 2;
+		//radius = 300;
+	var color = d3.scale.category20();
+	var pie = d3.layout.pie().sort(null);
+	var arc = d3.svg.arc()
+		//.innerRadius(radius - 100)
+		.innerRadius(radius - 170)
+		.outerRadius(radius - 50);
+	//var svg = d3.select("body").append("svg")
+	var svg = d3.select("#doughnut").append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.append("g")
+		.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+	var path = svg.selectAll("path")
+		.data(pie(dataset.apples))
+		.enter().append("path")
+		.attr("fill", function(d, i) { return color(i); })
+		.attr("d", arc);
 }

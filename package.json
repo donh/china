@@ -1,8 +1,8 @@
 {
   "name": "ChinaUrbanization",
-  "version": "2.6.0-dev",
+  "version": "0.5.0-131214",
   "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
+  "homepage": "https://github.com/donh/china",
   "subdomain": "revealjs",
   "author": {
     "name": "Don Hsieh",

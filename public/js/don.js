@@ -123,13 +123,15 @@ function cargo() {
 		//** Required if scaleOverride is true **
 		//Number - The number of steps in a hard coded scale
 		//scaleSteps : null,
-		scaleSteps : 12,
+		//scaleSteps : 12,
+		scaleSteps : 8,
 		//Number - The value jump in the hard coded scale
 		//scaleStepWidth : null,
-		scaleStepWidth : 250,
+		//scaleStepWidth : 250,
+		scaleStepWidth : 500,
 		//Number - The scale starting value
-		//scaleStartValue : null,
-		scaleStartValue : 1000,
+		scaleStartValue : null,
+		//scaleStartValue : 1000,
 		//String - Colour of the scale line
 		scaleLineColor : "rgba(0,0,0,.1)",
 		//Number - Pixel width of the scale line

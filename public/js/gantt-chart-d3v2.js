@@ -125,7 +125,7 @@ d3.gantt = function() {
 			.append("text")
 			.text(function(d) {
 				//return tasks[d.taskName];
-				return 'hello';
+				//return 'hello';
 			});
 
 		svg.selectAll(".chart")
@@ -133,8 +133,8 @@ d3.gantt = function() {
 			.data(tasks, keyFunction).enter()
 			.append("text")
 			.text(function(d) {
-				//return tasks[d.taskName];
-				return 'hello';
+				return tasks[d.taskName];
+				//return 'hello';
 			});
 /*
 		svg.selectAll(".chart")

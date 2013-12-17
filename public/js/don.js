@@ -99,18 +99,24 @@ function agriculcutureDoughnut2() {
 * @called by:		Reveal.addEventListener('slidechanged')
 *					 in views/home.jade
 */
-// http://www.chartjs.org/docs
 function cargo() {
 	var data = {
-		labels : ['1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010'
-],
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
+			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', 
+			'1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
+			'2006', '2007', '2008', '2009', '2010', '2011'
+		 ],
 		datasets : [{
 			fillColor : "rgba(220,220,220,0.5)",
 			strokeColor : "rgba(220,220,220,1)",
 			pointColor : "rgba(220,220,220,1)",
 			pointStrokeColor : "#fff",
-			data : [1076.73, 1134.95, 1187.84, 1240.74, 1307.09, 1356.35, 1406.53, 1449.48, 1514.89, 1506.81, 1528.93, 1576.27, 1627.94, 1632.16, 1659.82, 1710.24, 1721.49, 1643.09, 1675.54, 1785.81, 1931.89, 2049.56, 2242.48, 2490.17, 2692.96, 2882.24, 3142.37, 3303.54, 3333.48, 3642.71
-]
+			data : [1112.79, 1076.73, 1134.95, 1187.84, 1240.74, 1307.09, 1356.35, 
+				1406.53, 1449.48, 1514.89, 1506.81, 1528.93, 1576.27, 1627.94, 
+				1632.16, 1659.82, 1710.24, 1721.49, 1643.09, 1675.54, 1785.81, 
+				1931.89, 2049.56, 2242.48, 2490.17, 2692.96, 2882.24, 3142.37, 
+				3303.54, 3333.48, 3642.71, 3932.63
+			]
 		},
 	]};
 	var options = {
@@ -184,7 +190,102 @@ function cargo() {
 }
 
 /**
-* @function name:	function cargo()
+* @function name:	function loan()
+* @description:		This function draws a line charts
+*					 on "Agriculture Shares" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/15/2013
+* @last modified:	12/15/2013
+* @called by:		Reveal.addEventListener('slidechanged')
+*					 in views/home.jade
+*/
+function loan() {
+	var data = {
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
+			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', 
+			'1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
+			'2006', '2007', '2008', '2009', '2010', '2011'
+		 ],
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [247.81, 285.33, 316.27, 356.66, 474.68, 619.84, 814.27, 981.41, 
+				1196.43, 1424.88, 1751.1, 2111.64, 2574.28, 3295.58, 3997.51, 
+				5054.41, 6115.66, 7491.41, 8652.41, 9373.43, 9937.11, 11231.47, 
+				13129.39, 15899.62, 17736.35, 19469.04, 22528.53, 26169.09, 
+				30339.46, 39968.48, 47919.56, 54794.67
+			]
+		},
+	]};
+	var options = {
+		scaleOverlay : false,
+		//scaleOverride : false,
+		scaleOverride : true,
+		//scaleSteps : 8,
+		//scaleStepWidth : 500,
+		scaleSteps : 12,
+		scaleStepWidth : 5000,
+		//Number - The scale starting value
+		scaleStartValue : null,
+		//scaleStartValue : 1000,
+		//String - Colour of the scale line
+		scaleLineColor : "rgba(0,0,0,.1)",
+		//Number - Pixel width of the scale line
+		scaleLineWidth : 1,
+		//Boolean - Whether to show labels on the scale	
+		scaleShowLabels : true,
+		//Interpolated JS string - can access value
+		scaleLabel : "<%=value%>",
+		//String - Scale label font declaration for the scale label
+		scaleFontFamily : "'Arial'",
+		//Number - Scale label font size in pixels
+		//scaleFontSize : 12,
+		scaleFontSize : 10,
+		//String - Scale label font weight style
+		scaleFontStyle : "normal",
+		//String - Scale label font colour	
+		scaleFontColor : "#666",
+		//Boolean - Whether grid lines are shown across the chart
+		scaleShowGridLines : true,
+		//String - Colour of the grid lines
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		//Number - Width of the grid lines
+		scaleGridLineWidth : 1,
+		//Boolean - Whether the line is curved between points
+		bezierCurve : true,
+		//Boolean - Whether to show a dot for each point
+		pointDot : true,
+		//Number - Radius of each point dot in pixels
+		pointDotRadius : 3,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//Number - Number of animation steps
+		//animationSteps : 60,
+		//animationSteps : 100,
+		animationSteps : 150,
+		//String - Animation easing effect
+		animationEasing : "easeOutQuart",
+		//Function - Fires when the animation is complete
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_loan").getContext("2d")).Line(data, options);
+}
+
+/**
+* @function name:	function cargo2()
 * @description:		This function draws a line charts
 *					 on "Agriculture Shares" page.
 * @related issues:	

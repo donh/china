@@ -43,6 +43,153 @@ function agriculcutureDoughnut() {
 }
 
 /**
+* @function name:	function local_finance()
+* @description:		This function draws a bar chart
+*					 on "Local Government Finance (TN RMB)" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/18/2013
+* @last modified:	12/18/2013
+* @called by:		Reveal.addEventListener('slidechanged')
+*					 in views/home.jade
+*/
+function local_finance() {
+	var data = {
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
+			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', 
+			'1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
+			'2006', '2007', '2008', '2009', '2010', '2011'
+		],
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				//pointColor : "rgba(220,220,220,1)",
+				//pointStrokeColor : "#fff",
+				data : [0.088, 0.086, 0.087, 0.088, 0.098, 0.124, 0.134, 0.146, 
+					0.158, 0.184, 0.194, 0.221, 0.25, 0.339, 0.231, 0.299, 0.375, 
+					0.442, 0.498, 0.559, 0.641, 0.78, 0.852, 0.985, 1.189, 1.51, 
+					1.83, 2.357, 2.865, 3.26, 4.061, 5.255
+				]
+			},
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,1)",
+				//pointColor : "rgba(220,220,220,1)",
+				//pointStrokeColor : "#fff",
+				data : [0.056, 0.051, 0.058, 0.065, 0.081, 0.121, 0.137, 0.142, 
+					0.165, 0.194, 0.208, 0.23, 0.257, 0.333, 0.404, 0.483, 0.579, 
+					0.67, 0.767, 0.904, 1.037, 1.313, 1.528, 1.723, 2.059, 2.515, 
+					3.043, 3.834, 4.925, 6.104, 7.388, 9.273
+				]
+			},
+			{
+				fillColor : "rgba(255, 0, 0,0.5)",
+				strokeColor : "rgba(255, 0, 0,1)",
+				//pointColor : "rgba(220,220,220,1)",
+				//pointStrokeColor : "#fff",
+				data : [-0.032, -0.035, -0.029, -0.023, -0.017, -0.003, 0.003, 
+					-0.004, 0.007, 0.01, 0.014, 0.009, 0.007, -0.006, 0.173, 
+					0.184, 0.204, 0.228, 0.269, 0.345, 0.396, 0.533, 0.676, 
+					0.738, 0.87, 1.005, 1.213, 1.477, 2.06, 2.844, 3.327, 4.018
+				]
+				/*
+				data : [0.032, 0.035, 0.029, 0.023, 0.017, 0.003, -0.003, 0.004, 
+					-0.007, -0.01, -0.014, -0.009, -0.007, 0.006, -0.173, -0.184, 
+					-0.204, -0.228, -0.269, -0.345, -0.396, -0.533, -0.676, 
+					-0.738, -0.87, -1.005, -1.213, -1.477, -2.06, -2.844, 
+					-3.327, -4.018
+				]
+				*/
+			}		]
+	};
+	/*
+	var data_line = {
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
+			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', 
+			'1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
+			'2006', '2007', '2008', '2009', '2010', '2011'
+		],
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				pointColor : "rgba(220,220,220,1)",
+				pointStrokeColor : "#fff",
+				data : [0.032, 0.035, 0.029, 0.023, 0.017, 0.003, -0.003, 0.004, 
+					-0.007, -0.01, -0.014, -0.009, -0.007, 0.006, -0.173, -0.184, 
+					-0.204, -0.228, -0.269, -0.345, -0.396, -0.533, -0.676, 
+					-0.738, -0.87, -1.005, -1.213, -1.477, -2.06, -2.844, 
+					-3.327, -4.018
+				]
+			},
+		]
+	};
+	*/
+	var options = {
+		scaleOverlay : false,
+		//scaleOverride : false,
+		scaleOverride : true,
+		//scaleSteps : 8,
+		//scaleStepWidth : 500,
+		scaleSteps : 10,
+		scaleStepWidth : 1,
+		//Number - The scale starting value
+		//scaleStartValue : null,
+		scaleStartValue : 0,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//Boolean - If there is a stroke on each bar
+		barShowStroke : true,
+		//Number - Pixel width of the bar stroke
+		barStrokeWidth : 2,
+		//Number - Spacing between each of the X value sets
+		barValueSpacing : 5,
+		//Number - Spacing between data sets within X values
+		barDatasetSpacing : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	//var myBar = new Chart(document.getElementById("chart_local_finance").getContext("2d")).Bar(data, options);
+	var ctx = new Chart(document.getElementById("chart_local_finance").getContext("2d"));
+	var myBar = ctx.Bar(data, options);
+	//var myLine = ctx.Line(data_line, options);
+	//var myLine = new Chart(document.getElementById("chart_local_finance").getContext("2d")).Line(data_line, options);
+	//var myLine = myBar.Line(data_line, options);
+}
+
+/**
 * @function name:	function agriculcutureDoughnut()
 * @description:		This function draws two doughnut charts
 *					 on "Agriculture Shares" page.
@@ -101,11 +248,18 @@ function agriculcutureDoughnut2() {
 */
 function cargo() {
 	var data = {
+		/*
 		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
 			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', 
 			'1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
 			'2006', '2007', '2008', '2009', '2010', '2011'
-		 ],
+		],
+		*/
+		labels : ['1980', '', '', '', '', '1985', '', '', 
+			'', '', '1990', '', '', '', '', '1995', '', 
+			'', '', '', '2000', '', '', '', '', '2005', 
+			'', '', '', '', '', '2011'
+		],
 		datasets : [{
 			fillColor : "rgba(220,220,220,0.5)",
 			strokeColor : "rgba(220,220,220,1)",
@@ -149,8 +303,9 @@ function cargo() {
 		//String - Scale label font declaration for the scale label
 		scaleFontFamily : "'Arial'",
 		//Number - Scale label font size in pixels
+		scaleFontSize : 14,
 		//scaleFontSize : 12,
-		scaleFontSize : 10,
+		//scaleFontSize : 10,
 		//String - Scale label font weight style
 		scaleFontStyle : "normal",
 		//String - Scale label font colour	
@@ -240,7 +395,8 @@ function loan() {
 		scaleShowLabels : true,
 		scaleLabel : "<%=value%>",
 		scaleFontFamily : "'Arial'",
-		scaleFontSize : 10,
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
 		scaleFontStyle : "normal",
 		//scaleFontColor : "#666",
 		scaleFontColor : "#FFF",
@@ -314,7 +470,8 @@ function electricity() {
 		scaleShowLabels : true,
 		scaleLabel : "<%=value%>",
 		scaleFontFamily : "'Arial'",
-		scaleFontSize : 10,
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
 		scaleFontStyle : "normal",
 		scaleFontColor : "#FFF",
 		scaleShowGridLines : true,

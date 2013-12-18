@@ -12,6 +12,8 @@ section
 	script(src='js/gantt-chart-d3v2.js')
 	script(src='js/gantt-chart.js')
 
+//-section(style='width: 1300px;')
+//-http://ameyakarve.wordpress.com/2012/08/01/reveal-js-html5-based-slide-presentation-tool/
 section
 	//-h2 Rail Transport of Goods (Million Tonnes)
 	//-h2 Rail Freight Transport (MM Tonnes)
@@ -21,7 +23,8 @@ section
 	//-canvas#chart_cargo(width='1200' height='600' style='padding-left: 0; padding-right: 0; margin-left: auto; margin-right: auto; display: block;')
 	//-canvas#chart_cargo(width='1000' height='600' margin-left='auto' margin-right='auto')
 	//canvas#chart_cargo(width='1000' height='600')
-	canvas#chart_cargo(width='1100' height='550')
+	div
+		canvas#chart_cargo(width='1100' height='550')
 	div.slidenumber
 //-section
 //-	h2 Cargo2
@@ -31,8 +34,12 @@ section
 section
 	//-h2 Loans Disbursed by Banks (Billion RMB)
 	h2 Loans Disbursed by Banks (BN RMB)
-	canvas#chart_loan(width='1100' height='550')
+	//-canvas#chart_loan(width='1100' height='550')
+	//-canvas#chart_loan(width='1000' height='550')
+	canvas#chart_loan(width='1050' height='550')
 	div.slidenumber
+	//-script(type='text/javascript').
+		//-console.log(Reveal.getIndices());
 
 section
 	h2 Electricity Consumption (BN kW/h)

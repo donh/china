@@ -242,35 +242,44 @@ function agriculcutureDoughnut2() {
 * @return:			void
 * @author:			Don Hsieh
 * @since:			12/15/2013
-* @last modified:	12/15/2013
+* @last modified:	12/19/2013
 * @called by:		Reveal.addEventListener('slidechanged')
 *					 in views/home.jade
 */
 function cargo() {
 	var data = {
-		/*
+		///*
 		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
 			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', 
 			'1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
 			'2006', '2007', '2008', '2009', '2010', '2011'
 		],
-		*/
+		//*/
+		/*
 		labels : ['1980', '', '', '', '', '1985', '', '', 
 			'', '', '1990', '', '', '', '', '1995', '', 
 			'', '', '', '2000', '', '', '', '', '2005', 
 			'', '', '', '', '', '2011'
 		],
+		*/
 		datasets : [{
 			fillColor : "rgba(220,220,220,0.5)",
 			strokeColor : "rgba(220,220,220,1)",
 			pointColor : "rgba(220,220,220,1)",
 			pointStrokeColor : "#fff",
+			data : [1.113, 1.077, 1.135, 1.188, 1.241, 1.307, 1.356, 1.407, 
+				1.449, 1.515, 1.507, 1.529, 1.576, 1.628, 1.632, 1.66, 1.71, 
+				1.721, 1.643, 1.676, 1.786, 1.932, 2.05, 2.242, 2.49, 2.693, 
+				2.882, 3.142, 3.304, 3.333, 3.643, 3.933
+			]
+			/*
 			data : [1112.79, 1076.73, 1134.95, 1187.84, 1240.74, 1307.09, 1356.35, 
 				1406.53, 1449.48, 1514.89, 1506.81, 1528.93, 1576.27, 1627.94, 
 				1632.16, 1659.82, 1710.24, 1721.49, 1643.09, 1675.54, 1785.81, 
 				1931.89, 2049.56, 2242.48, 2490.17, 2692.96, 2882.24, 3142.37, 
 				3303.54, 3333.48, 3642.71, 3932.63
 			]
+			*/
 		},
 	]};
 	var options = {
@@ -283,14 +292,16 @@ function cargo() {
 		//** Required if scaleOverride is true **
 		//Number - The number of steps in a hard coded scale
 		//scaleSteps : null,
-		//scaleSteps : 12,
-		scaleSteps : 8,
+		scaleSteps : 12,
+		//scaleSteps : 6,
 		//Number - The value jump in the hard coded scale
 		//scaleStepWidth : null,
 		//scaleStepWidth : 250,
-		scaleStepWidth : 500,
+		//scaleStepWidth : 0.5,
+		scaleStepWidth : 0.25,
 		//Number - The scale starting value
-		scaleStartValue : null,
+		//scaleStartValue : null,
+		scaleStartValue : 1,
 		//scaleStartValue : 1000,
 		//String - Colour of the scale line
 		scaleLineColor : "rgba(0,0,0,.1)",

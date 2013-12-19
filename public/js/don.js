@@ -457,7 +457,7 @@ function loan() {
 * @return:			void
 * @author:			Don Hsieh
 * @since:			12/17/2013
-* @last modified:	12/17/2013
+* @last modified:	12/19/2013
 * @called by:		Reveal.addEventListener('slidechanged')
 *					 in views/home.jade
 */
@@ -471,21 +471,29 @@ function electricity() {
 			strokeColor : "rgba(220,220,220,1)",
 			pointColor : "rgba(220,220,220,1)",
 			pointStrokeColor : "#fff",
+			data : [13.472, 14.723, 16.465, 19.032, 21.971, 24.94, 28.588, 
+				32.712, 34.541, 37.032, 41.934, 47.001
+			]
+			/*
 			data : [1347.2, 1472.3, 1646.5, 1903.2, 2197.1, 2494, 2858.8, 3271.2, 
 				3454.1, 3703.2, 4193.4, 4700.1
 			]
+			*/
 		},
 	]};
 	var options = {
 		scaleOverlay : false,
 		//scaleOverride : false,
 		scaleOverride : true,
-		scaleSteps : 10,
-		scaleStepWidth : 500,
+		//scaleSteps : 10,
+		scaleSteps : 12,
+		//scaleStepWidth : 500,
+		scaleStepWidth : 3,
 		//scaleSteps : 12,
 		//scaleStepWidth : 5000,
 		//Number - The scale starting value
-		scaleStartValue : null,
+		//scaleStartValue : null,
+		scaleStartValue : 12,
 		scaleLineColor : "rgba(0,0,0,.1)",
 		scaleLineWidth : 1,
 		scaleShowLabels : true,

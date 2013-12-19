@@ -367,7 +367,7 @@ function cargo() {
 * @return:			void
 * @author:			Don Hsieh
 * @since:			12/17/2013
-* @last modified:	12/17/2013
+* @last modified:	12/19/2013
 * @called by:		Reveal.addEventListener('slidechanged')
 *					 in views/home.jade
 */
@@ -383,12 +383,20 @@ function loan() {
 			strokeColor : "rgba(220,220,220,1)",
 			pointColor : "rgba(220,220,220,1)",
 			pointStrokeColor : "#fff",
+			data : [0.2478, 0.2853, 0.3163, 0.3567, 0.4747, 0.6198, 0.8143, 
+				0.9814, 1.196, 1.425, 1.751, 2.112, 2.574, 3.296, 3.998, 
+				5.054, 6.116, 7.491, 8.652, 9.373, 9.937, 11.23, 13.13, 
+				15.9, 17.74, 19.47, 22.53, 26.17, 30.34, 39.97, 47.92, 
+				54.79
+			]
+			/*
 			data : [247.81, 285.33, 316.27, 356.66, 474.68, 619.84, 814.27, 981.41, 
 				1196.43, 1424.88, 1751.1, 2111.64, 2574.28, 3295.58, 3997.51, 
 				5054.41, 6115.66, 7491.41, 8652.41, 9373.43, 9937.11, 11231.47, 
 				13129.39, 15899.62, 17736.35, 19469.04, 22528.53, 26169.09, 
 				30339.46, 39968.48, 47919.56, 54794.67
 			]
+			*/
 		},
 	]};
 	var options = {
@@ -397,8 +405,10 @@ function loan() {
 		scaleOverride : true,
 		//scaleSteps : 8,
 		//scaleStepWidth : 500,
-		scaleSteps : 12,
-		scaleStepWidth : 5000,
+		//scaleSteps : 12,
+		scaleSteps : 11,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 5,
 		//Number - The scale starting value
 		scaleStartValue : null,
 		scaleLineColor : "rgba(0,0,0,.1)",

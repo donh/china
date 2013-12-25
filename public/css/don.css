@@ -6,3 +6,12 @@ div.source {
 	font-family:"Times New Roman", Times, serif;
 	text-align: left;
 }
+div.slidenumber {
+	/*
+	display: block;
+	left: 10px;
+	right: initial;
+	bottom: -30px;
+	text-align: center;
+	*/
+}

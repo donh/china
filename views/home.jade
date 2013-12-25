@@ -118,11 +118,12 @@ block content
 		}
 		Reveal.addEventListener('slidechanged', function(event) {
 			agriculcutureDoughnut();
-			local_finance();
+			//-local_finance();
 			cargo();
 			loan();
 			electricity();
-			//console.log(Reveal.getIndices());
+			console.log(event.currentSlide);
+			console.log(Reveal.getIndices());
 			//cargo2();
 			/*
 			var inView = false;
@@ -145,6 +146,9 @@ block content
 		Reveal.addEventListener('ready', function(event) {
 			var number = slidenumber(event);
 			jQuery(".slidenumber").text(number);
+		});
+		Reveal.addEventListener('local_finance', function(event) {
+			local_finance();
 		});
 		function isScrolledIntoView(elem) {
 			//console.log(elem);

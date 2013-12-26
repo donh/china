@@ -12,6 +12,10 @@
 *					 in views/home.jade
 */
 function markSlideNumber() {
+	//console.log(document.URL);
+	var url = document.URL;
+	var print = true;
+	if (url.indexOf('print-pdf') < 0) {print = false;};
 	var total = document.querySelectorAll( '.reveal .slides section:not(.stack)' );
 	var pages = new Array();
 	//console.log(total);
@@ -31,7 +35,9 @@ function markSlideNumber() {
 		//jQuery(".slidenumber").text(number);
 		var strSlideNumber = pages[index].toString() + '/' + totalslides.toString();
 		jQuery(this).text(strSlideNumber);
-		jQuery(this).hide();	// Disable this when print
+		if (!print) {
+			jQuery(this).hide();	// Disable this when print
+		};
 	});
 }
 

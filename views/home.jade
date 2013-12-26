@@ -123,7 +123,8 @@ block content
 		});
 		Reveal.addEventListener('ready', function(event) {
 			markSlideNumber();
-			$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial;bottom: -30px; text-align: center;"></aside>')
+			//-$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial; bottom: -30px; text-align: center;"></aside>')
+			$('<aside class="controls slide-number" style="display: block; left: initial; right: 10px; bottom: -30px; text-align: center;"></aside>')
 			.text(currentPageFormatter(event))
 			.appendTo('.reveal.center');
 		});

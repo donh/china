@@ -113,6 +113,10 @@ block content
 			agriculcutureDoughnut();
 		});
 		Reveal.addEventListener('slidechanged', function(event) {
+			//var slidenumber = event.currentSlide.querySelector('.slidenumber');
+			//console.log(slidenumber.innerHTML);
+			jQuery(".slide-number").text(currentPageFormatter(event));
+			//console.log(slidenumber.firstChild);
 			//-console.log(event.currentSlide);
 			//-console.log(Reveal.getIndices());
 			//-cargo2();
@@ -139,42 +143,10 @@ block content
 				//jQuery(".slidenumber").text(number);
 				var strSlideNumber = pages[index].toString() + '/' + totalslides.toString();
 				jQuery(this).text(strSlideNumber);
+				jQuery(this).hide();	//- Disable this when print
 			});
-
-			//var number = slidenumber(event);
-			//jQuery(".slidenumber").text(number);
-			$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial;bottom: -30px; text-align: center;"></aside>')
-			.text(currentPageFormatter(event))
-			//.text(strSlideNumber)
-			.appendTo('.reveal.center');
-		});
-		function currentPageFormatter(event) {
-			var formattedStr;
-			if (event.indexh === 0) {
-				return "";
-			}
-			formattedStr = event.indexh;
-			if (event.indexv) {
-				formattedStr += "/" + event.indexv;
-			}
-			return formattedStr;
-		}
-		/*
-		Reveal.addEventListener( 'ready', function( event ) {
 			$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial;bottom: -30px; text-align: center;"></aside>')
 			.text(currentPageFormatter(event))
 			.appendTo('.reveal.center');
-		} );
-		// Fires each time a new slide is activated
-		Reveal.addEventListener( 'slidechanged', function( event ) {
-			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-			$(".slide-number").text(currentPageFormatter(event));
-		} );
-		*/
-		/*
-		$("section").each(function( index ) {
-			//console.log( index + ": " + $( this ).text() );
-			console.log( index + ": " );
 		});
-		*/
 		//-Reveal.configure({ slideNumber: true });

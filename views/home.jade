@@ -97,6 +97,12 @@ block content
 				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 			]
 		});
+		Reveal.addEventListener('local_finance', function(event) {
+			local_finance();
+		});
+		Reveal.addEventListener('cargo', function(event) {
+			cargo();
+		});
 		function slidenumber(event) {
 			var totalslides = document.querySelectorAll( '.reveal .slides section:not(.stack)' ).length;
 			//console.log(totalslides);
@@ -118,8 +124,6 @@ block content
 		}
 		Reveal.addEventListener('slidechanged', function(event) {
 			agriculcutureDoughnut();
-			//-local_finance();
-			cargo();
 			loan();
 			electricity();
 			console.log(event.currentSlide);
@@ -146,9 +150,6 @@ block content
 		Reveal.addEventListener('ready', function(event) {
 			var number = slidenumber(event);
 			jQuery(".slidenumber").text(number);
-		});
-		Reveal.addEventListener('local_finance', function(event) {
-			local_finance();
 		});
 		function isScrolledIntoView(elem) {
 			//console.log(elem);

@@ -103,6 +103,9 @@ block content
 		Reveal.addEventListener('cargo', function(event) {
 			cargo();
 		});
+		Reveal.addEventListener('loan', function(event) {
+			loan();
+		});
 		Reveal.addEventListener('agriculture', function(event) {
 			agriculcutureDoughnut();
 		});
@@ -126,7 +129,7 @@ block content
 			return current_slide.toString()+"/"+totalslides.toString();
 		}
 		Reveal.addEventListener('slidechanged', function(event) {
-			loan();
+			
 			electricity();
 			console.log(event.currentSlide);
 			console.log(Reveal.getIndices());

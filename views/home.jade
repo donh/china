@@ -122,29 +122,7 @@ block content
 			//-cargo2();
 		});
 		Reveal.addEventListener('ready', function(event) {
-			var total = document.querySelectorAll( '.reveal .slides section:not(.stack)' );
-			var pages = new Array();
-			//console.log(total);
-			for (var i = 0; i < total.length; i++) {
-				//console.log(total[i]);
-				//console.log(total[i].querySelector('.slidenumber'));
-				if (total[i].querySelector('.slidenumber')) {
-					pages.push(i+1);
-				}
-			}
-			//console.log(event.currentSlide);
-			//console.log(Reveal.getIndices());
-			//console.log(pages.length);
-			//console.log(pages);
-			var totalslides = total.length;
-
-			jQuery(".slidenumber").each(function( index ) {
-				//console.log( index + ": " + $( this ).text() );
-				//jQuery(".slidenumber").text(number);
-				var strSlideNumber = pages[index].toString() + '/' + totalslides.toString();
-				jQuery(this).text(strSlideNumber);
-				jQuery(this).hide();	//- Disable this when print
-			});
+			markSlideNumber();
 			$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial;bottom: -30px; text-align: center;"></aside>')
 			.text(currentPageFormatter(event))
 			.appendTo('.reveal.center');

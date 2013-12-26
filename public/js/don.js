@@ -1,7 +1,44 @@
 /**
+* @function name:	function markSlideNumber()
+* @description:		This function marks slide numbers
+*					 on div.slidenumber.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/26/2013
+* @last modified:	12/26/2013
+* @called by:		Reveal.addEventListener('ready')
+*					 in views/home.jade
+*/
+function markSlideNumber() {
+	var total = document.querySelectorAll( '.reveal .slides section:not(.stack)' );
+	var pages = new Array();
+	//console.log(total);
+	for (var i = 0; i < total.length; i++) {
+		//console.log(total[i]);
+		//console.log(total[i].querySelector('.slidenumber'));
+		if (total[i].querySelector('.slidenumber')) {
+			pages.push(i+1);
+		}
+	}
+	//console.log(event.currentSlide);
+	//console.log(Reveal.getIndices());
+	//console.log(pages.length);
+	var totalslides = total.length;
+	jQuery(".slidenumber").each(function( index ) {
+		//console.log( index + ": " + $( this ).text() );
+		//jQuery(".slidenumber").text(number);
+		var strSlideNumber = pages[index].toString() + '/' + totalslides.toString();
+		jQuery(this).text(strSlideNumber);
+		jQuery(this).hide();	// Disable this when print
+	});
+}
+
+/**
 * @function name:	function currentPageFormatter(event)
-* @description:		This function draws a line charts
-*					 on "Railway Cargo Volume (MM Tonnes)" page.
+* @description:		This function marks slide numbers
+*					 on <aside>.
 * @related issues:	
 * @param:			object event
 * @return:			void

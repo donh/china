@@ -112,59 +112,10 @@ block content
 		Reveal.addEventListener('agriculture', function(event) {
 			agriculcutureDoughnut();
 		});
-		function slidenumber(event) {
-			//-https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelectorAll
-			//-http://blog.romanliutikov.com/post/63383858003/how-to-forget-about-jquery-and-start-using-native
-			var totalslides = document.querySelectorAll( '.reveal .slides section:not(.stack)' ).length;
-			//console.log(totalslides);
-			var current_slide = 0;
-
-			var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
-			console.log(horizontal_slides);
-			//console.log(horizontal_slides[1][0]);
-			for (var i = 0; i < event.indexh; i++) {
-				// get subslides
-				var subslides = horizontal_slides[i].querySelectorAll('section');
-				var footers = horizontal_slides[i].querySelectorAll('.slidenumber');
-				//console.log(footers);
-				if (footers[0]) {
-					//console.log(footers[0]);
-					//console.log(footers[0].innerText);
-					//console.log(footers[0].getAttribute('innerText'));
-					//document.querySelector('.el').getAttribute('key');
-				}
-				console.log('subslides of horizontal_slides[' + i + ']');
-				console.log(subslides);
-				if (subslides[0]) {
-					console.log(subslides[0]);
-					//-console.log(subslides[0].getAttribute('div.slidenumber'));
-					//console.log(subslides[0].querySelector('.slidenumber'));
-					//console.log(subslides[0].getElementsByClassName('slidenumber'));
-					//console.log(subslides[0].getElementsByClassName('slidenumber')[0]);
-					console.log(subslides[0].querySelector('.slidenumber').innerText);
-					console.log(subslides[0].getElementsByClassName('slidenumber').innerText);
-					//jQuery(".slidenumber").text(number);
-					//jQuery(subslides[0].slidenumber).text('hi');
-					//console.log(subslides[0].getElementsByClassName('slidenumber')[0].getAttribute('innerText'));
-					//console.log(subslides[0].getElementsByClassName('slidenumber')[0].attributes);
-					//console.log(subslides[0].querySelector('.slidenumber').value);
-				}
-				// if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
-				current_slide += (subslides.length === 0) ? 1 : subslides.length;
-			}
-			//console.log(current_slide);
-			current_slide += event.indexv+1;
-			//console.log(current_slide);
-			//console.log(current_slide.toString()+"/"+totalslides.toString());
-			return current_slide.toString()+"/"+totalslides.toString();
-		}
 		Reveal.addEventListener('slidechanged', function(event) {
-			//console.log(event.currentSlide);
-			//console.log(Reveal.getIndices());
-			//cargo2();
-			//var number = slidenumber(event);
-			//jQuery(".slidenumber").text(number);
-			//$(".slide-number").text(currentPageFormatter(event));
+			//-console.log(event.currentSlide);
+			//-console.log(Reveal.getIndices());
+			//-cargo2();
 		});
 		Reveal.addEventListener('ready', function(event) {
 			var total = document.querySelectorAll( '.reveal .slides section:not(.stack)' );
@@ -183,16 +134,18 @@ block content
 			//console.log(pages);
 			var totalslides = total.length;
 
-			$(".slidenumber").each(function( index ) {
+			jQuery(".slidenumber").each(function( index ) {
 				//console.log( index + ": " + $( this ).text() );
 				//jQuery(".slidenumber").text(number);
-				$( this ).text(pages[index].toString() + '/' + totalslides.toString());
+				var strSlideNumber = pages[index].toString() + '/' + totalslides.toString();
+				jQuery(this).text(strSlideNumber);
 			});
 
 			//var number = slidenumber(event);
 			//jQuery(".slidenumber").text(number);
 			$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial;bottom: -30px; text-align: center;"></aside>')
 			.text(currentPageFormatter(event))
+			//.text(strSlideNumber)
 			.appendTo('.reveal.center');
 		});
 		function currentPageFormatter(event) {
@@ -217,13 +170,6 @@ block content
 			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
 			$(".slide-number").text(currentPageFormatter(event));
 		} );
-		*/
-		/*
-		$(".slidenumber").each(function( index ) {
-			console.log( index + ": " + $( this ).text() );
-			console.log(event.currentSlide);
-			console.log(Reveal.getIndices());
-		});
 		*/
 		/*
 		$("section").each(function( index ) {

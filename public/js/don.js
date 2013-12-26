@@ -49,6 +49,7 @@ function markSlideNumber() {
 *					Reveal.addEventListener('slidechanged')
 *					 in views/home.jade
 */
+// https://gist.github.com/lfac-pt/5073918
 function currentPageFormatter(event) {
 	var formattedStr = '';
 	var slidenumber = event.currentSlide.querySelector('.slidenumber');

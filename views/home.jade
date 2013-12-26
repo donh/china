@@ -113,59 +113,88 @@ block content
 			agriculcutureDoughnut();
 		});
 		function slidenumber(event) {
+			//-https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelectorAll
+			//-http://blog.romanliutikov.com/post/63383858003/how-to-forget-about-jquery-and-start-using-native
 			var totalslides = document.querySelectorAll( '.reveal .slides section:not(.stack)' ).length;
 			//console.log(totalslides);
 			var current_slide = 0;
 
 			var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
-			//console.log(horizontal_slides);
+			console.log(horizontal_slides);
+			//console.log(horizontal_slides[1][0]);
 			for (var i = 0; i < event.indexh; i++) {
 				// get subslides
 				var subslides = horizontal_slides[i].querySelectorAll('section');
-
+				var footers = horizontal_slides[i].querySelectorAll('.slidenumber');
+				//console.log(footers);
+				if (footers[0]) {
+					//console.log(footers[0]);
+					//console.log(footers[0].innerText);
+					//console.log(footers[0].getAttribute('innerText'));
+					//document.querySelector('.el').getAttribute('key');
+				}
+				console.log('subslides of horizontal_slides[' + i + ']');
+				console.log(subslides);
+				if (subslides[0]) {
+					console.log(subslides[0]);
+					//-console.log(subslides[0].getAttribute('div.slidenumber'));
+					//console.log(subslides[0].querySelector('.slidenumber'));
+					//console.log(subslides[0].getElementsByClassName('slidenumber'));
+					//console.log(subslides[0].getElementsByClassName('slidenumber')[0]);
+					console.log(subslides[0].querySelector('.slidenumber').innerText);
+					console.log(subslides[0].getElementsByClassName('slidenumber').innerText);
+					//jQuery(".slidenumber").text(number);
+					//jQuery(subslides[0].slidenumber).text('hi');
+					//console.log(subslides[0].getElementsByClassName('slidenumber')[0].getAttribute('innerText'));
+					//console.log(subslides[0].getElementsByClassName('slidenumber')[0].attributes);
+					//console.log(subslides[0].querySelector('.slidenumber').value);
+				}
 				// if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
 				current_slide += (subslides.length === 0) ? 1 : subslides.length;
 			}
 			//console.log(current_slide);
 			current_slide += event.indexv+1;
+			//console.log(current_slide);
 			//console.log(current_slide.toString()+"/"+totalslides.toString());
 			return current_slide.toString()+"/"+totalslides.toString();
 		}
 		Reveal.addEventListener('slidechanged', function(event) {
-			console.log(event.currentSlide);
-			console.log(Reveal.getIndices());
+			//console.log(event.currentSlide);
+			//console.log(Reveal.getIndices());
 			//cargo2();
-			/*
-			var inView = false;
-			if (isScrolledIntoView('#canvas')) {
-				if (inView) { return; }
-				inView = true;
-			} else if (isScrolledIntoView('#chart_cargo')) {
-				console.log('hi3');
-				if (inView) { return; }
-				inView = true;
-				console.log('hi5');
-
-			} else {
-				inView = false;
-			}
-			*/
-			var number = slidenumber(event);
-			jQuery(".slidenumber").text(number);
+			//var number = slidenumber(event);
+			//jQuery(".slidenumber").text(number);
+			//$(".slide-number").text(currentPageFormatter(event));
 		});
 		Reveal.addEventListener('ready', function(event) {
-			var number = slidenumber(event);
-			jQuery(".slidenumber").text(number);
+			var total = document.querySelectorAll( '.reveal .slides section:not(.stack)' );
+			var pages = new Array();
+			//console.log(total);
+			for (var i = 0; i < total.length; i++) {
+				//console.log(total[i]);
+				//console.log(total[i].querySelector('.slidenumber'));
+				if (total[i].querySelector('.slidenumber')) {
+					pages.push(i+1);
+				}
+			}
+			//console.log(event.currentSlide);
+			//console.log(Reveal.getIndices());
+			//console.log(pages.length);
+			//console.log(pages);
+			var totalslides = total.length;
+
+			$(".slidenumber").each(function( index ) {
+				//console.log( index + ": " + $( this ).text() );
+				//jQuery(".slidenumber").text(number);
+				$( this ).text(pages[index].toString() + '/' + totalslides.toString());
+			});
+
+			//var number = slidenumber(event);
+			//jQuery(".slidenumber").text(number);
+			$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial;bottom: -30px; text-align: center;"></aside>')
+			.text(currentPageFormatter(event))
+			.appendTo('.reveal.center');
 		});
-		function isScrolledIntoView(elem) {
-			//console.log(elem);
-			var docViewTop = $(window).scrollTop()+50;
-			var docViewBottom = docViewTop + $(window).height();
-			var elemTop = $(elem).offset().top;
-			var elemBottom = elemTop + $(elem).height();
-			return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-		}
-		/*
 		function currentPageFormatter(event) {
 			var formattedStr;
 			if (event.indexh === 0) {
@@ -177,6 +206,7 @@ block content
 			}
 			return formattedStr;
 		}
+		/*
 		Reveal.addEventListener( 'ready', function( event ) {
 			$('<aside class="controls slide-number" style="display: block; left: 10px; right: initial;bottom: -30px; text-align: center;"></aside>')
 			.text(currentPageFormatter(event))
@@ -187,5 +217,18 @@ block content
 			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
 			$(".slide-number").text(currentPageFormatter(event));
 		} );
+		*/
+		/*
+		$(".slidenumber").each(function( index ) {
+			console.log( index + ": " + $( this ).text() );
+			console.log(event.currentSlide);
+			console.log(Reveal.getIndices());
+		});
+		*/
+		/*
+		$("section").each(function( index ) {
+			//console.log( index + ": " + $( this ).text() );
+			console.log( index + ": " );
+		});
 		*/
 		//-Reveal.configure({ slideNumber: true });

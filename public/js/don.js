@@ -1,4 +1,127 @@
 /**
+* @function name:	function income()
+* @description:		This function draws a line charts
+*					 on "Railway Cargo Volume (MM Tonnes)" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/29/2013
+* @last modified:	12/29/2013
+* @called by:		Reveal.addEventListener('slidechanged')
+*					 in views/home.jade
+*/
+function income() {
+	var data = {
+		/*
+		labels : ['2000', '2001', '2002', '2003', '2004', '2005', 
+			'2006', '2007', '2008', '2009', '2010', '2011'
+		],
+		*/
+		///*
+		labels : ['2000', '', '', '2003', '', '', 
+			'2006', '', '', '2009', '', '2011'
+		],
+		//*/
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				pointColor : "rgba(220,220,220,1)",
+				pointStrokeColor : "#fff",
+				data : [9.33, 10.83, 12.37, 13.97, 15.92, 18.20, 20.86, 
+					24.72, 28.90, 32.24, 36.54, 41.80
+				]
+				/*
+				data : [9333, 10834, 12373, 13969, 15920, 18200, 20856, 
+					24721, 28898, 32244, 36539, 41799
+				]
+				*/
+			}
+	]};
+	var options = {
+		//Boolean - If we show the scale above the chart data
+		scaleOverlay : false,
+		//scaleOverlay : true,
+		//Boolean - If we want to override with a hard coded scale
+		//scaleOverride : false,
+		scaleOverride : true,
+		//** Required if scaleOverride is true **
+		//Number - The number of steps in a hard coded scale
+		//scaleSteps : null,
+		//scaleSteps : 12,
+		scaleSteps : 8,
+		//scaleSteps : 6,
+		//Number - The value jump in the hard coded scale
+		//scaleStepWidth : null,
+		//scaleStepWidth : 250,
+		//scaleStepWidth : 0.5,
+		//scaleStepWidth : 0.25,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 5,
+		//Number - The scale starting value
+		//scaleStartValue : null,
+		//scaleStartValue : 1,
+		//scaleStartValue : 1000,
+		//scaleStartValue : 5000,
+		scaleStartValue : 5,
+		//String - Colour of the scale line
+		scaleLineColor : "rgba(0,0,0,.1)",
+		//Number - Pixel width of the scale line
+		scaleLineWidth : 1,
+		//Boolean - Whether to show labels on the scale	
+		scaleShowLabels : true,
+		//Interpolated JS string - can access value
+		scaleLabel : "<%=value%>",
+		//String - Scale label font declaration for the scale label
+		scaleFontFamily : "'Arial'",
+		//Number - Scale label font size in pixels
+		scaleFontSize : 14,
+		//scaleFontSize : 12,
+		//scaleFontSize : 10,
+		//String - Scale label font weight style
+		scaleFontStyle : "normal",
+		//String - Scale label font colour	
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		//Boolean - Whether grid lines are shown across the chart
+		scaleShowGridLines : true,
+		//String - Colour of the grid lines
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		//Number - Width of the grid lines
+		scaleGridLineWidth : 1,
+		//Boolean - Whether the line is curved between points
+		//bezierCurve : true,
+		bezierCurve : false,
+		//Boolean - Whether to show a dot for each point
+		pointDot : true,
+		//Number - Radius of each point dot in pixels
+		//pointDotRadius : 3,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//datasetFill : false,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//Number - Number of animation steps
+		//animationSteps : 60,
+		//animationSteps : 100,
+		animationSteps : 150,
+		//String - Animation easing effect
+		animationEasing : "easeOutQuart",
+		//Function - Fires when the animation is complete
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_income").getContext("2d")).Line(data, options);
+}
+
+/**
 * @function name:	function markSlideNumber()
 * @description:		This function marks slide numbers
 *					 on div.slidenumber.

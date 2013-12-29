@@ -289,24 +289,30 @@ function export_import() {
 */
 function income() {
 	var data = {
+		labels : ['1980', '', '', '', '', '1985', '', '', 
+			'', '', '1990', '', '', '', '', '1995', '', 
+			'', '', '', '2000', '', '', '', '', '2005', 
+			'', '', '', '', '2010', '', '', '2013E'
+		],
 		/*
-		labels : ['2000', '2001', '2002', '2003', '2004', '2005', 
-			'2006', '2007', '2008', '2009', '2010', '2011'
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', 
+			'1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', 
+			'1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', 
+			'2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', 
+			'2011', '2012', '2013E'
 		],
 		*/
-		///*
-		labels : ['2000', '', '', '2003', '', '', 
-			'2006', '', '2008', '', '', '2011'
-		],
-		//*/
 		datasets : [
 			{
 				fillColor : "rgba(220,220,220,0.5)",
 				strokeColor : "rgba(220,220,220,1)",
 				pointColor : "rgba(220,220,220,1)",
 				pointStrokeColor : "#fff",
-				data : [9.33, 10.83, 12.37, 13.97, 15.92, 18.20, 20.86, 
-					24.72, 28.90, 32.24, 36.54, 41.80
+				data : [0.478, 0.500, 0.535, 0.565, 0.652, 0.739, 0.901, 
+					1.00, 1.18, 1.37, 1.51, 1.70, 2.03, 2.58, 3.50, 4.28, 
+					4.84, 5.16, 5.43, 5.85, 6.28, 6.86, 7.70, 8.47, 9.42, 
+					10.49, 11.76, 13.79, 15.78, 17.17, 19.11, 21.81, 
+					24.56, 26.89
 				]
 				/*
 				data : [9333, 10834, 12373, 13969, 15920, 18200, 20856, 
@@ -326,8 +332,8 @@ function income() {
 		//Number - The number of steps in a hard coded scale
 		//scaleSteps : null,
 		//scaleSteps : 12,
-		scaleSteps : 8,
-		//scaleSteps : 6,
+		//scaleSteps : 8,
+		scaleSteps : 6,
 		//Number - The value jump in the hard coded scale
 		//scaleStepWidth : null,
 		//scaleStepWidth : 250,
@@ -340,7 +346,7 @@ function income() {
 		//scaleStartValue : 1,
 		//scaleStartValue : 1000,
 		//scaleStartValue : 5000,
-		scaleStartValue : 5,
+		//scaleStartValue : 5,
 		//String - Colour of the scale line
 		scaleLineColor : "rgba(0,0,0,.1)",
 		//Number - Pixel width of the scale line

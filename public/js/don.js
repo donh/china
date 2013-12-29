@@ -1,6 +1,7 @@
 /**
-* @function name:	function export_import()
-* @description:		This function draws line chart "Per Capita Income (K RMB)"
+* @function name:	function GDP()
+* @description:		This function draws line chart
+*					 "GDP (TN RMB)"
 *					 on "China's Economic Achievements" page.
 * @related issues:	
 * @param:			void
@@ -8,7 +9,97 @@
 * @author:			Don Hsieh
 * @since:			12/29/2013
 * @last modified:	12/29/2013
-* @called by:		Reveal.addEventListener('slidechanged')
+* @called by:		Reveal.addEventListener('china_economy')
+*					 in views/home.jade
+*/
+function GDP() {
+	var data = {
+		labels : ['1980', '', '', '', '', '1985', '', '', 
+			'', '', '1990', '', '', '', '', '1995', '', 
+			'', '', '', '2000', '', '', '', '', '2005', 
+			'', '', '2008', '', '', '2011'
+		],
+		/*
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', 
+			'1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', 
+			'1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', 
+			'2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', 
+			'2011'
+		],
+		*/
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [0.455, 0.489, 0.532, 0.596, 0.721, 0.902, 1.03, 1.21, 
+				1.50, 1.70, 1.87, 2.18, 2.69, 3.53, 4.82, 6.08, 7.12, 
+				7.90, 8.44, 8.97, 9.92, 10.97, 12.03, 13.58, 15.99, 18.49, 
+				21.63, 26.58, 31.40, 34.09, 40.15, 47.31 
+			]
+		},
+	]};
+	var options = {
+		scaleOverlay : false,
+		//scaleOverride : false,
+		scaleOverride : true,
+		//scaleSteps : 8,
+		//scaleStepWidth : 500,
+		//scaleSteps : 12,
+		scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 10,
+		//Number - The scale starting value
+		scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_GDP").getContext("2d")).Line(data, options);
+}
+
+/**
+* @function name:	function export_import()
+* @description:		This function draws line chart
+*					 "Total Export-import Volume (TN RMB)"
+*					 on "China's Economic Achievements" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/29/2013
+* @last modified:	12/29/2013
+* @called by:		Reveal.addEventListener('china_economy')
 *					 in views/home.jade
 */
 function export_import() {
@@ -105,7 +196,7 @@ function export_import() {
 * @author:			Don Hsieh
 * @since:			12/29/2013
 * @last modified:	12/29/2013
-* @called by:		Reveal.addEventListener('slidechanged')
+* @called by:		Reveal.addEventListener('china_economy')
 *					 in views/home.jade
 */
 function income() {
@@ -117,7 +208,7 @@ function income() {
 		*/
 		///*
 		labels : ['2000', '', '', '2003', '', '', 
-			'2006', '', '', '2009', '', '2011'
+			'2006', '', '2008', '', '', '2011'
 		],
 		//*/
 		datasets : [

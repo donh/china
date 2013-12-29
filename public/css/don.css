@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/*
+.reveal .slides section .2-1 {
+*/
+.reveal .slides section .container {
+	width: 100%;
+}
+
 .slidenumber {
 	/*position: relative;*/
 	/*position: absolute;*/

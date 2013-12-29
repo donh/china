@@ -1,7 +1,104 @@
 /**
+* @function name:	function export_import()
+* @description:		This function draws line chart "Per Capita Income (K RMB)"
+*					 on "China's Economic Achievements" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/29/2013
+* @last modified:	12/29/2013
+* @called by:		Reveal.addEventListener('slidechanged')
+*					 in views/home.jade
+*/
+function export_import() {
+	var data = {
+		labels : ['1980', '', '', '', '', '1985', '', '', 
+			'', '', '1990', '', '', '', '', '1995', '', 
+			'', '', '', '2000', '', '', '', '', '2005', 
+			'', '', '2008', '', '', '2011'
+		],
+		/*
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', 
+			'1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', 
+			'1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', 
+			'2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', 
+			'2011'
+		],
+		*/
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [0.057, 0.074, 0.077, 0.086, 0.120, 0.207, 0.258, 0.308, 
+				0.382, 0.416, 0.556, 0.723, 0.912, 1.13, 2.04, 2.35, 2.41, 
+				2.70, 2.68, 2.99, 3.93, 4.22, 5.14, 7.05, 9.55, 11.69, 
+				14.10, 16.69, 17.99, 15.06, 20.17, 23.64
+			]
+			/*
+			data : [247.81, 285.33, 316.27, 356.66, 474.68, 619.84, 814.27, 981.41, 
+				1196.43, 1424.88, 1751.1, 2111.64, 2574.28, 3295.58, 3997.51, 
+				5054.41, 6115.66, 7491.41, 8652.41, 9373.43, 9937.11, 11231.47, 
+				13129.39, 15899.62, 17736.35, 19469.04, 22528.53, 26169.09, 
+				30339.46, 39968.48, 47919.56, 54794.67
+			]
+			*/
+		},
+	]};
+	var options = {
+		scaleOverlay : false,
+		//scaleOverride : false,
+		scaleOverride : true,
+		//scaleSteps : 8,
+		//scaleStepWidth : 500,
+		//scaleSteps : 12,
+		scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 5,
+		//Number - The scale starting value
+		scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_export").getContext("2d")).Line(data, options);
+}
+
+/**
 * @function name:	function income()
-* @description:		This function draws a line charts
-*					 on "Railway Cargo Volume (MM Tonnes)" page.
+* @description:		This function draws line chart "Per Capita Income (K RMB)"
+*					 on "China's Economic Achievements" page.
 * @related issues:	
 * @param:			void
 * @return:			void

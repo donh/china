@@ -109,6 +109,12 @@ block content
 				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 			]
 		});
+		Reveal.addEventListener('china_economy', function(event) {
+			cargo();
+			loan();
+			electricity();
+			agriculcutureDoughnut();
+		});
 		Reveal.addEventListener('local_finance', function(event) {
 			local_finance();
 		});

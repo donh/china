@@ -1,9 +1,36 @@
 @charset "UTF-8";
-/*
-.reveal .slides section .2-1 {
-*/
 .reveal .slides section .container {
+	/*position: relative;*/
 	width: 100%;
+}
+
+.reveal .slides section .two-left {
+	/*position: relative;*/
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+.reveal .slides section .two-right {
+	/*position: relative;*/
+	width: 50%;
+	float: right;
+	text-align: center;
+}
+
+.reveal .slides section .two-upper {
+	height: 50%;
+	vertical-align: top;
+	/*float: left;*/
+	text-align: center;
+}
+
+.reveal .slides section .two-lower {
+	height: 50%;
+	/*float: left;*/
+	text-align: center;
+	/*position: absolute;*/
+	/*bottom: 0;*/
 }
 
 .slidenumber {

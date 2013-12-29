@@ -1,4 +1,92 @@
 /**
+* @function name:	function PPP()
+* @description:		This function draws line chart
+*					 "GDP (TN RMB)"
+*					 on "China's Economic Achievements" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			12/29/2013
+* @last modified:	12/29/2013
+* @called by:		Reveal.addEventListener('china_economy')
+*					 in views/home.jade
+*/
+function PPP() {
+	var data = {
+		labels : ['1980', '', '', '', '', '1985', '', '', 
+			'', '', '1990', '', '', '', '', '1995', '', 
+			'', '', '', '2000', '', '', '', '', '2005', 
+			'', '', '2008', '', '', '2011'
+		],
+		/*
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', 
+			'1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', 
+			'1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', 
+			'2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', 
+			'2011'
+		],
+		*/
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [0.463, 0.492, 0.528, 0.583, 0.695, 0.858, 0.963, 1.11, 
+				1.37, 1.52, 1.64, 1.89, 2.31, 3.00, 4.04, 5.05, 5.85, 
+				6.42, 6.80, 7.16, 7.86, 8.62, 9.40, 10.54, 12.34, 14.19, 
+				16.50, 20.17, 23.71, 25.61, 30.02, 35.20 
+			]
+		},
+	]};
+	var options = {
+		scaleOverlay : false,
+		//scaleOverride : false,
+		scaleOverride : true,
+		scaleSteps : 8,
+		//scaleSteps : 12,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 5,
+		//Number - The scale starting value
+		scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_PPP").getContext("2d")).Line(data, options);
+}
+
+/**
 * @function name:	function GDP()
 * @description:		This function draws line chart
 *					 "GDP (TN RMB)"

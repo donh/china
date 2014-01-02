@@ -1,4 +1,174 @@
 /**
+* @function name:	function shanghai()
+* @description:		This function draws line chart
+*					 "Urban Salary (K RMB)"
+*					 on 'When "Miss World" No Longer Charming' page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/02/2014
+* @last modified:	01/02/2014
+* @called by:		Reveal.addEventListener('urban_salary')
+*					 in views/home.jade
+*/
+function shanghai() {
+	var data = {
+		labels : ['1991', '', '', '', '1995', '', '', 
+			'', '', '2000', '', '', '', '', '2005', 
+			'', '', '', '', '2010', '', '', '2013'
+		],
+		/*
+		labels : ['1991', '1992', '1993', '1994', '1995', '1996', '1997', 
+			'1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
+			'2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013'
+		],
+		*/
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [162.5, 695.6, 1052.8, 690.9, 681.9, 798.4, 1230.1, 1337.3, 
+				1463.8, 1998.0, 2046.3, 1635.8, 1536.2, 1555.5, 1211.6, 1712.3, 
+				4448.4, 3181.9, 2902.4, 2967.2, 2793.1, 2324.2, 2294.4
+			]
+		},
+	]};
+	var options = {
+		scaleOverlay : false,
+		scaleOverride : true,
+		//scaleSteps : 12,
+		scaleSteps : 9,
+		//scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 500,
+		//scaleStepWidth : 10,
+		//scaleStepWidth : 5,
+		//Number - The scale starting value
+		//scaleStartValue : 5,
+		//scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_shanghai_index").getContext("2d")).Line(data, options);
+}
+
+/**
+* @function name:	function salary()
+* @description:		This function draws line chart
+*					 "Urban Salary (K RMB)"
+*					 on 'When "Miss World" No Longer Charming' page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/02/2014
+* @last modified:	01/02/2014
+* @called by:		Reveal.addEventListener('urban_salary')
+*					 in views/home.jade
+*/
+function salary() {
+	var data = {
+		labels : ['2000', '', '', '2003', '', '', '2006', '', 
+			'', '2009', '', '2011'
+		],
+		/*
+		labels : ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', 
+			'2008', '2009', '2010', '2011'
+		],
+		*/
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [9.33, 10.83, 12.37, 13.97, 15.92, 18.20, 20.86, 24.72, 28.90, 
+				32.24, 36.54, 41.80
+			]
+		},
+	]};
+	var options = {
+		scaleOverlay : false,
+		scaleOverride : true,
+		//scaleSteps : 12,
+		scaleSteps : 8,
+		//scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		//scaleStepWidth : 10,
+		scaleStepWidth : 5,
+		//Number - The scale starting value
+		scaleStartValue : 5,
+		//scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_salary").getContext("2d")).Line(data, options);
+}
+
+/**
 * @function name:	function PPP()
 * @description:		This function draws line chart
 *					 "GDP (TN RMB)"
@@ -522,11 +692,18 @@ function agriculcutureDoughnut() {
 */
 function local_finance() {
 	var data = {
+		labels : ['1980', '', '', '', '', '1985', '', '', 
+			'', '', '1990', '', '', '', '', '1995', '', 
+			'', '', '', '2000', '', '', '', '', '2005', 
+			'', '', '', '', '', '2011'
+		],
+		/*
 		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', 
 			'1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', 
 			'1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
 			'2006', '2007', '2008', '2009', '2010', '2011'
 		],
+		*/
 		datasets : [
 			{
 				fillColor : "rgba(220,220,220,0.5)",

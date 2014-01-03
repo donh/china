@@ -1,4 +1,48 @@
 /**
+* @function name:	function smallCities()
+* @description:		This function draws doughnut chart
+*					 "Jiangsu Occupies Half of Top 10"
+*					 on "Urbanization in China" slide.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/03/2014
+* @last modified:	01/03/2014
+* @called by:		Reveal.addEventListener('urbanization')
+*					 in views/home.jade
+*/
+function smallCities() {
+	var GDPData = [{
+		value: 5,
+		color : "#46BFBD",
+	},
+	{
+		value : 1,
+		color : "#F7464A",
+	},
+	{
+		value : 1,
+		color : "#FF6600",
+	},
+	{
+		value : 1,
+		color : "#FDB45C",
+	},
+	{
+		value : 1,
+		color : "#A2F20C",
+	},
+	{
+		value : 1,
+		color : "#949FB1",
+		//color : "#4D5360",
+	}
+	];
+	var myDoughnut = new Chart(document.getElementById("small_cities").getContext("2d")).Doughnut(GDPData, {labelAlign: 'center'});
+}
+
+/**
 * @function name:	GDPGrowthByQ()
 * @description:		This function draws bar chart
 *					 "Urbanization Rate (%)"

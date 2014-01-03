@@ -4,7 +4,7 @@ section
 	h3 Athena Ouyang
 	div.slidenumber
 
-section
+section(data-state='spotlight')
 	h2 Spotlight on China
 	div.contianer
 		div.two-left
@@ -18,7 +18,8 @@ section
 					//-li second largest manufacturing country in the world.
 			div.two-lower
 				ul
-					li GDP Per Capita (K RMB)
+					li Economic Growth Rate (%)
+				canvas#world_growth(width='400' height='260')
 		div.two-right
 			div.two-upper
 				ul
@@ -27,10 +28,11 @@ section
 						li Fourth in 2005
 						li Third in 2008
 						li Second in 2010
+				canvas#blank(height='10')
 			div.two-lower
 				ul
-					//-li Urban Salary (K RMB)
-					li Disposal Income (K RMB)
+						li(style='font-size:33px;') Foreign Exchange Reserves (TN)
+				canvas#chart_reserves(width='400' height='260')
 	div.slidenumber
 
 section(data-state='china_economy')

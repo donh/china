@@ -109,6 +109,10 @@ block content
 				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 			]
 		});
+		Reveal.addEventListener('spotlight', function(event) {
+			worldGrowth();
+			foreignExchangeReserves();
+		});
 		Reveal.addEventListener('china_economy', function(event) {
 			GDP();
 			PPP();

@@ -1,4 +1,164 @@
 /**
+* @function name:	function foreignExchangeReserves()
+* @description:		This function draws line chart
+*					 "Foreign Exchange Reserves (TN)"
+*					 on "Spotlight on China" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/03/2014
+* @last modified:	01/03/2014
+* @called by:		Reveal.addEventListener('spotlight')
+*					 in views/home.jade
+*/
+function foreignExchangeReserves() {
+	var data = {
+		labels : ['China', 'India', 'U.S.', 'Japan', 'Taiwan', 
+			'Singapore', 'Switzerland', 'U.K.'
+		],
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [3.56, 0.291, 0.146, 1.28, 0.421, 0.272, 0.531, 0.136]
+		},
+		/*
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			data : [28,48,40,19,96,27,100]
+		}
+		*/
+	]};
+	var options = {
+		scaleOverlay : false,
+		//scaleOverride : true,
+		//scaleSteps : 12,
+		scaleSteps : 9,
+		//scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 500,
+		//scaleStepWidth : 10,
+		//scaleStepWidth : 5,
+		//Number - The scale starting value
+		//scaleStartValue : 5,
+		//scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		//Boolean - If there is a stroke on each bar
+		barShowStroke : true,
+		//Number - Pixel width of the bar stroke
+		barStrokeWidth : 2,
+		//Number - Spacing between each of the X value sets
+		barValueSpacing : 5,
+		//Number - Spacing between data sets within X values
+		barDatasetSpacing : 1,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myBar = new Chart(document.getElementById("chart_reserves").getContext("2d")).Bar(data, options);
+}
+
+/**
+* @function name:	function worldGrowth()
+* @description:		This function draws line chart
+*					 "Economic Growth Rate (%)"
+*					 on "Spotlight on China" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/03/2014
+* @last modified:	01/03/2014
+* @called by:		Reveal.addEventListener('spotlight')
+*					 in views/home.jade
+*/
+function worldGrowth() {
+	var data = {
+		labels : ['China', 'India', 'U.S.', 'Japan', 'Taiwan', 
+			'Singapore', 'Switzerland', 'U.K.'
+		],
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [7.8, 6.6, 2.2, 2, 1.3, 1.3, 1, 0.3]
+		},
+		/*
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			data : [28,48,40,19,96,27,100]
+		}
+		*/
+	]};
+	var options = {
+		scaleOverlay : false,
+		//scaleOverride : true,
+		//scaleSteps : 12,
+		scaleSteps : 9,
+		//scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 500,
+		//scaleStepWidth : 10,
+		//scaleStepWidth : 5,
+		//Number - The scale starting value
+		//scaleStartValue : 5,
+		//scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		//Boolean - If there is a stroke on each bar
+		barShowStroke : true,
+		//Number - Pixel width of the bar stroke
+		barStrokeWidth : 2,
+		//Number - Spacing between each of the X value sets
+		barValueSpacing : 5,
+		//Number - Spacing between data sets within X values
+		barDatasetSpacing : 1,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myBar = new Chart(document.getElementById("world_growth").getContext("2d")).Bar(data, options);
+}
+
+/**
 * @function name:	function shanghai()
 * @description:		This function draws line chart
 *					 "Urban Salary (K RMB)"

@@ -4,6 +4,33 @@ section#urbanization
 	h3 Don Hsieh
 	div.slidenumber
 
+section(data-state='income_gap')
+	h2 From World Factory to World Market
+	div.contianer
+		div.two-left
+			div.two-upper
+				ul
+					li(style='font-size:30px;') Urban-Rural Income Gap (K RMB)
+				canvas#income_gap(width='400' height='260')
+				div.source Source: National Bureau of Statistics of China
+			div.two-lower
+				//-ul
+				//-	li Migration Flows, 2000 - 2005
+				img(width='289' height='260' src='img/Migration_Flows_289x260.jpg' alt='Migration Flows' style='vertical-align: middle')
+				div.source Source: SC and NBS (2007)
+		div.two-right
+			div.two-upper
+				br
+				img(width='250' height='250' src='img/Li_Keqiang_250.jpg' alt='Li Keqiang' style='vertical-align: middle')
+				canvas#blank(height='0')
+			div.two-lower
+				ul
+					li Problems
+					ul
+						li Inflow: pollution, energy consumption, social welfare, traffic congestion
+						li Outflow: rural hollowing
+	div.slidenumber
+
 section
 	h2 Temp
 	br

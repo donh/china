@@ -1,4 +1,129 @@
 /**
+* @function name:	function income_gap()
+* @description:		This function draws line chart "Per Capita Income (K RMB)"
+*					 on "China's Economic Achievements" slide.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/04/2014
+* @last modified:	01/04/2014
+* @called by:		Reveal.addEventListener('china_economy')
+*					 in views/home.jade
+*/
+function income_gap() {
+	var data = {
+		labels : ['2005', '', '', '', '', '2010', 
+			'', '', '2013E'
+		],
+		/*
+		labels : ['2005', '2006', '2007', '2008', '2009', '2010', 
+			'2011', '2012', '2013E'
+		],
+		*/
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				pointColor : "rgba(220,220,220,1)",
+				pointStrokeColor : "#fff",
+				data : [10.49, 11.76, 13.79, 15.78, 17.17, 19.11, 
+					21.81, 24.56, 26.89 
+				]
+			},
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,1)",
+				pointColor : "rgba(151,187,205,1)",
+				pointStrokeColor : "#fff",
+				data : [3.92, 4.30, 4.96, 5.74, 6.27, 7.09, 8.64, 
+					9.79, 10.17 
+				]
+			}
+	]};
+	var options = {
+		//Boolean - If we show the scale above the chart data
+		scaleOverlay : false,
+		//scaleOverlay : true,
+		//Boolean - If we want to override with a hard coded scale
+		//scaleOverride : false,
+		scaleOverride : true,
+		//** Required if scaleOverride is true **
+		//Number - The number of steps in a hard coded scale
+		//scaleSteps : null,
+		//scaleSteps : 12,
+		//scaleSteps : 8,
+		scaleSteps : 6,
+		//Number - The value jump in the hard coded scale
+		//scaleStepWidth : null,
+		//scaleStepWidth : 250,
+		//scaleStepWidth : 0.5,
+		//scaleStepWidth : 0.25,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 5,
+		//Number - The scale starting value
+		//scaleStartValue : null,
+		//scaleStartValue : 1,
+		//scaleStartValue : 1000,
+		//scaleStartValue : 5000,
+		//scaleStartValue : 5,
+		//String - Colour of the scale line
+		scaleLineColor : "rgba(0,0,0,.1)",
+		//Number - Pixel width of the scale line
+		scaleLineWidth : 1,
+		//Boolean - Whether to show labels on the scale	
+		scaleShowLabels : true,
+		//Interpolated JS string - can access value
+		scaleLabel : "<%=value%>",
+		//String - Scale label font declaration for the scale label
+		scaleFontFamily : "'Arial'",
+		//Number - Scale label font size in pixels
+		scaleFontSize : 14,
+		//scaleFontSize : 12,
+		//scaleFontSize : 10,
+		//String - Scale label font weight style
+		scaleFontStyle : "normal",
+		//String - Scale label font colour	
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		//Boolean - Whether grid lines are shown across the chart
+		scaleShowGridLines : true,
+		//String - Colour of the grid lines
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		//Number - Width of the grid lines
+		scaleGridLineWidth : 1,
+		//Boolean - Whether the line is curved between points
+		//bezierCurve : true,
+		bezierCurve : false,
+		//Boolean - Whether to show a dot for each point
+		pointDot : true,
+		//Number - Radius of each point dot in pixels
+		//pointDotRadius : 3,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//datasetFill : false,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//Number - Number of animation steps
+		//animationSteps : 60,
+		//animationSteps : 100,
+		animationSteps : 150,
+		//String - Animation easing effect
+		animationEasing : "easeOutQuart",
+		//Function - Fires when the animation is complete
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("income_gap").getContext("2d")).Line(data, options);
+}
+
+/**
 * @function name:	function smallCities()
 * @description:		This function draws doughnut chart
 *					 "Jiangsu Occupies Half of Top 10"

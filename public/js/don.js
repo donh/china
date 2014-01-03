@@ -1,6 +1,123 @@
 /**
+* @function name:	GDPGrowthByQ()
+* @description:		This function draws bar chart
+*					 "Foreign Exchange Reserves (TN)"
+*					 on "Spotlight on China" page.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/03/2014
+* @last modified:	01/03/2014
+* @called by:		Reveal.addEventListener('spotlight')
+*					 in views/home.jade
+*/
+function GDPGrowthByQ() {
+	var data = {
+		labels : ['921Q', '', '', '', '', '', '', 
+			'', '941Q', '', '', '', '', '', '', 
+			'', '961Q', '', '', '', '', '', '', 
+			'', '981Q', '', '', '', '', '', '', 
+			'', '001Q', '', '', '', '', '', '', 
+			'', '021Q', '', '', '', '', '', '', 
+			'', '041Q', '', '', '', '', '', '', 
+			'', '061Q', '', '', '', '', '', '', 
+			'', '081Q', '', '', '', '', '', '', 
+			'', '101Q', '', '', '', '', '', '', 
+			'', '121Q', '', '', '', '', '', '133Q'
+		],
+		/*
+		labels : ['921Q', '922Q', '923Q', '924Q', '931Q', '932Q', '933Q', 
+			'934Q', '941Q', '942Q', '943Q', '944Q', '951Q', '952Q', '953Q', 
+			'954Q', '961Q', '962Q', '963Q', '964Q', '971Q', '972Q', '973Q', 
+			'974Q', '981Q', '982Q', '983Q', '984Q', '991Q', '992Q', '993Q', 
+			'994Q', '001Q', '002Q', '003Q', '004Q', '011Q', '012Q', '013Q', 
+			'014Q', '021Q', '022Q', '023Q', '024Q', '031Q', '032Q', '033Q', 
+			'034Q', '041Q', '042Q', '043Q', '044Q', '051Q', '052Q', '053Q', 
+			'054Q', '061Q', '062Q', '063Q', '064Q', '071Q', '072Q', '073Q', 
+			'074Q', '081Q', '082Q', '083Q', '084Q', '091Q', '092Q', '093Q', 
+			'094Q', '101Q', '102Q', '103Q', '104Q', '111Q', '112Q', '113Q', 
+			'114Q', '121Q', '122Q', '123Q', '124Q', '131Q', '132Q', '133Q'
+		],
+		*/
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [13.6, 13.3, 13.3, 14.2, 15.1, 14.8, 14.3, 14, 12.9, 12.4, 
+				12.4, 13.1, 12, 11, 10.6, 10.9, 10.9, 10.3, 10, 10, 10.4, 10.2, 
+				9.6, 9.3, 7.6, 7.2, 7.5, 7.8, 9.1, 8.3, 8.1, 7.6, 9, 8.9, 8.9, 
+				8.4, 8.5, 8.1, 8, 8.3, 8.9, 8.9, 9.2, 9.1, 10.8, 9.7, 10.1, 10, 
+				10.4, 10.9, 10.5, 10.1, 11.2, 11, 11.1, 11.3, 12.4, 13.1, 12.8, 
+				12.7, 14, 14.5, 14.4, 14.2, 11.3, 11, 10.6, 9.6, 6.6, 7.5, 8.2, 
+				9.2, 12.1, 11.2, 10.7, 10.4, 9.8, 9.7, 9.5, 9.3, 7.9, 7.7, 7.6, 
+				7.7, 7.7, 7.6, 7.7
+			]
+		},
+		/*
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			data : [28,48,40,19,96,27,100]
+		}
+		*/
+	]};
+	var options = {
+		scaleOverlay : false,
+		scaleOverride : true,
+		//scaleSteps : 12,
+		scaleSteps : 9,
+		//scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 500,
+		//scaleStepWidth : 10,
+		//scaleStepWidth : 5,
+		scaleStepWidth : 1,
+		//Number - The scale starting value
+		scaleStartValue : 6,
+		//scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		//scaleFontFamily : "'Times'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("GDP_Q").getContext("2d")).Line(data, options);
+}
+
+/**
 * @function name:	function foreignExchangeReserves()
-* @description:		This function draws line chart
+* @description:		This function draws bar chart
 *					 "Foreign Exchange Reserves (TN)"
 *					 on "Spotlight on China" page.
 * @related issues:	
@@ -80,7 +197,7 @@ function foreignExchangeReserves() {
 
 /**
 * @function name:	function worldGrowth()
-* @description:		This function draws line chart
+* @description:		This function draws bar chart
 *					 "Economic Growth Rate (%)"
 *					 on "Spotlight on China" page.
 * @related issues:	

@@ -5,10 +5,93 @@ section
 	div.slidenumber
 
 section
+	h2 Temp
+	br
+	ul
+		li Regional development
+		li Cities belt
+		li 輻射式
+		li Urbanization
+		ul
+			li land
+			li hukou
+			li employment
+	div.slidenumber
+
+section(data-state='urbanization')
+	h2 Urbanization in China
+	div.contianer
+		div.two-left
+			div.two-upper
+				ul
+					li 李克強三月上任主推
+					li 
+			div.two-lower
+				ul
+					li Urban Salary (K RMB)
+				//-canvas#chart_salary(width='400' height='260')
+				div.source Source: National Bureau of Statistics of China
+		div.two-right
+			div.two-upper
+				ul
+					li Urbanization Rate (%)
+				canvas#chart_urbanization(width='400' height='260')
+			div.two-lower
+				ul
+					//-li Shanghai Stock Exchange A Share Index
+					li Shanghai A Share Index
+				//-canvas#chart_shanghai_index(width='400' height='260')
+				div.source Source: Wind
+	div.slidenumber
+
+section
+	h2 Myth of Urbanization Rate
+	br
+	ul
+		li Urbanization is not equal to economic growth
+		ul
+			li Brazil, Mexico urbanization failed
+			li 空城、貧民窟、趕農民上樓
+		li Hukou
+		li The key is urban hukou rate (35%), not urbanization rate (52%).
+	div.slidenumber
+
+section
+	h2 Case Study: Southern Jiangsu
+	br
+	ul
+		li 江蘇淮河以南，這邊有很多中小城市
+		ul
+			li 小城鎮帶發展出自己的加工業
+			li 城鎮化需要有產業來帶動
+			li 哪些區域還會形成城鎮帶？
+		li 
+	div.slidenumber
+
+section
+	h2 Urbanization (Cont.)
+	br
+	ul
+		li 上海 vs. 北京
+		li 研究德國的案例，為何形成很多衛星城。
+	div.slidenumber
+
+section
+	h2 The Hukou System
+	br
+	ul
+		li Divided population into two types of households: <i>rural</i> and <i>urban</i>
+		li Basically an <i>internal passport system</i>
+		li Differential treatments of rural and urban residents
+		ul
+			li the system serves as a benefit eligibility system; a tool of institutional exclusion than controlling geographical mobility
+	div.slidenumber
+
+section
 	//-h2 Top 100 Small and Medium-sized Cities in China in 2013
 	h2 Top 50 Small and Medium-sized Cities in China in 2013
 	center
-	table(style='width:850px; margin: 10px auto;')
+	table(style='width:880px; margin: 10px auto;')
 		tr(style='font-size:24px;')
 			td 1
 			td 江蘇崑山市
@@ -119,69 +202,4 @@ section
 			td 江蘇如皋市
 			td 50
 			td(style='font-size:22px;') 遼寧大石橋市
-	div.slidenumber
-
-section
-	h2 Temp
-	br
-	ul
-		li Regional development
-		li Cities belt
-		li 輻射式
-		li Urbanization
-		ul
-			li land
-			li hukou
-			li employment
-	div.slidenumber
-
-section
-	h2 Urbanization in China
-	br
-	ul
-		li 李克強三月上任主推
-		li 
-	div.slidenumber
-
-section
-	h2 Myth of Urbanization Rate
-	br
-	ul
-		li Urbanization is not equal to economic growth
-		ul
-			li Brazil, Mexico urbanization failed
-			li 空城、貧民窟、趕農民上樓
-		li Hukou
-		li The key is urban hukou rate (35%), not urbanization rate (52%).
-	div.slidenumber
-
-section
-	h2 Case Study: Southern Jiangsu
-	br
-	ul
-		li 江蘇淮河以南，這邊有很多中小城市
-		ul
-			li 小城鎮帶發展出自己的加工業
-			li 城鎮化需要有產業來帶動
-			li 哪些區域還會形成城鎮帶？
-		li 
-	div.slidenumber
-
-section
-	h2 Urbanization (Cont.)
-	br
-	ul
-		li 上海 vs. 北京
-		li 研究德國的案例，為何形成很多衛星城。
-	div.slidenumber
-
-section
-	h2 The Hukou System
-	br
-	ul
-		li Divided population into two types of households: <i>rural</i> and <i>urban</i>
-		li Basically an <i>internal passport system</i>
-		li Differential treatments of rural and urban residents
-		ul
-			li the system serves as a benefit eligibility system; a tool of institutional exclusion than controlling geographical mobility
 	div.slidenumber

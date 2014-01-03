@@ -1,8 +1,111 @@
 /**
 * @function name:	GDPGrowthByQ()
 * @description:		This function draws bar chart
+*					 "Urbanization Rate (%)"
+*					 on "Urbanization in China" slide.
+* @related issues:	
+* @param:			void
+* @return:			void
+* @author:			Don Hsieh
+* @since:			01/03/2014
+* @last modified:	01/03/2014
+* @called by:		Reveal.addEventListener('spotlight')
+*					 in views/home.jade
+*/
+function urbanization() {
+	var data = {
+		labels : ['1980', '', '', '', '', '1985', '', 
+			'', '', '', '1990', '', '', '', '', 
+			'1995', '', '', '', '', '2000', '', '', 
+			'', '', '2005', '', '', '', '', '', '2011'
+		],
+		/*
+		labels : ['1980', '1981', '1982', '1983', '1984', '1985', '1986', 
+			'1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', 
+			'1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', 
+			'2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', 
+			'2011'
+		],
+		*/
+		datasets : [{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [19.39, 20.16, 21.13, 21.62, 23.01, 23.71, 24.52, 25.32, 
+				25.81, 26.21, 26.41, 26.94, 27.46, 27.99, 28.51, 29.04, 30.48, 
+				31.91, 33.35, 34.78, 36.22, 37.66, 39.09, 40.53, 41.76, 42.99, 
+				44.34, 45.89, 46.99, 48.34, 49.95, 51.27
+			]
+		},
+		/*
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			data : [28,48,40,19,96,27,100]
+		}
+		*/
+	]};
+	var options = {
+		scaleOverlay : false,
+		scaleOverride : true,
+		//scaleSteps : 12,
+		scaleSteps : 8,
+		//scaleSteps : 5,
+		//scaleStepWidth : 5000,
+		scaleStepWidth : 500,
+		//scaleStepWidth : 10,
+		scaleStepWidth : 5,
+		//scaleStepWidth : 1,
+		//Number - The scale starting value
+		scaleStartValue : 15,
+		//scaleStartValue : null,
+		scaleLineColor : "rgba(0,0,0,.1)",
+		scaleLineWidth : 1,
+		scaleShowLabels : true,
+		scaleLabel : "<%=value%>",
+		scaleFontFamily : "'Arial'",
+		//scaleFontFamily : "'Times'",
+		scaleFontSize : 14,
+		//scaleFontSize : 10,
+		scaleFontStyle : "normal",
+		//scaleFontColor : "#666",
+		scaleFontColor : "#FFF",
+		scaleShowGridLines : true,
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+		scaleGridLineWidth : 1,
+		//bezierCurve : true,
+		bezierCurve : false,
+		pointDot : true,
+		//pointDotRadius : 3,
+		//pointDotRadius : 5,
+		pointDotRadius : 4,
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+		//Boolean - Whether to animate the chart
+		animation : true,
+		//animationSteps : 100,
+		animationSteps : 150,
+		animationEasing : "easeOutQuart",
+		onAnimationComplete : null
+	};
+	var myLine = new Chart(document.getElementById("chart_urbanization").getContext("2d")).Line(data, options);
+}
+
+
+
+
+/**
+* @function name:	GDPGrowthByQ()
+* @description:		This function draws bar chart
 *					 "Foreign Exchange Reserves (TN)"
-*					 on "Spotlight on China" page.
+*					 on "Spotlight on China" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -119,7 +222,7 @@ function GDPGrowthByQ() {
 * @function name:	function foreignExchangeReserves()
 * @description:		This function draws bar chart
 *					 "Foreign Exchange Reserves (TN)"
-*					 on "Spotlight on China" page.
+*					 on "Spotlight on China" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -199,7 +302,7 @@ function foreignExchangeReserves() {
 * @function name:	function worldGrowth()
 * @description:		This function draws bar chart
 *					 "Economic Growth Rate (%)"
-*					 on "Spotlight on China" page.
+*					 on "Spotlight on China" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -449,7 +552,7 @@ function salary() {
 * @function name:	function PPP()
 * @description:		This function draws line chart
 *					 "GDP (TN RMB)"
-*					 on "China's Economic Achievements" page.
+*					 on "China's Economic Achievements" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -538,7 +641,7 @@ function PPP() {
 * @function name:	function GDP()
 * @description:		This function draws line chart
 *					 "GDP (TN RMB)"
-*					 on "China's Economic Achievements" page.
+*					 on "China's Economic Achievements" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -629,7 +732,7 @@ function GDP() {
 * @function name:	function export_import()
 * @description:		This function draws line chart
 *					 "Total Export-import Volume (TN RMB)"
-*					 on "China's Economic Achievements" page.
+*					 on "China's Economic Achievements" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -727,7 +830,7 @@ function export_import() {
 /**
 * @function name:	function income()
 * @description:		This function draws line chart "Per Capita Income (K RMB)"
-*					 on "China's Economic Achievements" page.
+*					 on "China's Economic Achievements" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -926,7 +1029,7 @@ function currentPageFormatter(event) {
 /**
 * @function name:	function agriculcutureDoughnut()
 * @description:		This function draws two doughnut charts
-*					 on "Agriculture Shares" page.
+*					 on "Agriculture Shares" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -961,7 +1064,7 @@ function agriculcutureDoughnut() {
 /**
 * @function name:	function local_finance()
 * @description:		This function draws a bar chart
-*					 on "Local Government Finance (TN RMB)" page.
+*					 on "Local Government Finance (TN RMB)" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -1125,7 +1228,7 @@ function local_finance() {
 /**
 * @function name:	function agriculcutureDoughnut()
 * @description:		This function draws two doughnut charts
-*					 on "Agriculture Shares" page.
+*					 on "Agriculture Shares" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -1169,7 +1272,7 @@ function agriculcutureDoughnut2() {
 /**
 * @function name:	function cargo()
 * @description:		This function draws a line charts
-*					 on "Railway Cargo Volume (MM Tonnes)" page.
+*					 on "Railway Cargo Volume (MM Tonnes)" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -1329,7 +1432,7 @@ function cargo() {
 /**
 * @function name:	function loan()
 * @description:		This function draws a line charts
-*					 on "Loans Disbursed by Banks (BN RMB)" page.
+*					 on "Loans Disbursed by Banks (BN RMB)" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -1419,7 +1522,7 @@ function loan() {
 /**
 * @function name:	function electricity()
 * @description:		This function draws a line charts
-*					 on "Electricity Consumption (BN kW/h)" page.
+*					 on "Electricity Consumption (BN kW/h)" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -1501,7 +1604,7 @@ function electricity() {
 /**
 * @function name:	function cargo2()
 * @description:		This function draws a line charts
-*					 on "Agriculture Shares" page.
+*					 on "Agriculture Shares" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
@@ -1537,7 +1640,7 @@ function cargo2() {
 /**
 * @function name:	function doughnutD3()
 * @description:		This function draws a line charts
-*					 on "Agriculture Shares" page.
+*					 on "Agriculture Shares" slide.
 * @related issues:	
 * @param:			void
 * @return:			void
